@@ -127,6 +127,8 @@ let scenes: ƒS.Scenes = [
  //Nochmal nachschauen auf Github
 let uiElement: HTMLElement = document.querySelector("[type=interface]");
 dataForSave.state = ƒS.Progress.setDataInterface(dataForSave.state, uiElement);
+uiElement.setAttribute("value", "50");
+console.log(uiElement);
   //setData for saved objects:
   //temp disabled
 //ƒS.Progress.setData(dataForSave);

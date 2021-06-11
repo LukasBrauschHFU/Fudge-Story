@@ -89,10 +89,14 @@ speech.Narrator name {
 
 speech > name {
   position: absolute;
-  bottom: 75px;
+  bottom: 135px;
   border: 4px solid rgb(46, 43, 43);
   background-color: rgba(255, 255, 255, 0.918);
 }
+
 meter::-webkit-meter-optimum-value{
   background-color: indigo;
 }
+
+
+

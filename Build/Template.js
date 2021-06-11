@@ -345,6 +345,8 @@ var Template;
         //Nochmal nachschauen auf Github
         let uiElement = document.querySelector("[type=interface]");
         Template.dataForSave.state = Template.ƒS.Progress.setDataInterface(Template.dataForSave.state, uiElement);
+        uiElement.setAttribute("value", "50");
+        console.log(uiElement);
         //setData for saved objects:
         //temp disabled
         //ƒS.Progress.setData(dataForSave);
@@ -382,6 +384,7 @@ var Template;
         await Template.ƒS.Location.show(Template.locations.city);
         await Template.ƒS.update(1);
         await Template.ƒS.Speech.tell(Template.characters.Narrator, text.Narrator.T0000),
+            //dataForSave.state.a++;
             //Show Characters
             await Template.ƒS.Character.show(Template.characters.Ryu, Template.characters.Ryu.pose.normal, Template.ƒS.positionPercent(140, 290));
         //cons
@@ -390,7 +393,9 @@ var Template;
         await Template.ƒS.Speech.tell(Template.characters.Ryu, text.Ryu.T0000),
             //Möglichkeit 2
             // await ƒS.Speech.tell(characters.Ryu, "Wilkommen Fremder"); //Bei Auswahlmöglichkeiten gut)
-            await Template.ƒS.Character.show(Template.characters.Protagonist, Template.characters.Protagonist.pose.normal, Template.ƒS.positionPercent(30, 150));
+            //Set Progress
+            Template.dataForSave.state.a += 10;
+        await Template.ƒS.Character.show(Template.characters.Protagonist, Template.characters.Protagonist.pose.normal, Template.ƒS.positionPercent(30, 150));
         await Template.ƒS.update(1);
         await Template.ƒS.Speech.tell(Template.characters.Protagonist, text.Protagonist.T0000),
             await Template.ƒS.Speech.tell(Template.characters.Ryu, text.Ryu.T0001),

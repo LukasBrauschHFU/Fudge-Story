@@ -1,4 +1,4 @@
-namespace Template {
+ namespace Template {
     export async function  Animation(): ƒS.SceneReturn {
         
    
@@ -15,7 +15,7 @@ namespace Template {
     //Animation
     let animation: ƒS.AnimationDefinition = {
     start: {
-        translation: ƒS.positions.bottomleft
+        translation: ƒS.positions.bottomleft 
        // rotation: 1,
       //  scaling: new ƒS.Position(1, 1)
       //  color: ƒS.Color.CSS("blue", 0)

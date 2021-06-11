@@ -26,12 +26,12 @@ namespace Template {
     let pokeball: ƒS.ItemDefinition = items.Pokeball;
     ƒS.Inventory.add(pokeball);
     ƒS.Inventory.add(items.Pokeball2);
-
     await ƒS.Inventory.open();
     
     await ƒS.Location.show(locations.city);
     await ƒS.update(1);
-    await ƒS.Speech.tell(characters.Narrator, text.Narrator.T0000), 
+    await ƒS.Speech.tell(characters.Narrator, text.Narrator.T0000),  
+    //dataForSave.state.a++;
     //Show Characters
     await ƒS.Character.show(characters.Ryu, characters.Ryu.pose.normal, ƒS.positionPercent(140, 290)); 
     //cons
@@ -40,7 +40,8 @@ namespace Template {
     await ƒS.Speech.tell(characters.Ryu, text.Ryu.T0000),
     //Möglichkeit 2
    // await ƒS.Speech.tell(characters.Ryu, "Wilkommen Fremder"); //Bei Auswahlmöglichkeiten gut)
-
+    //Set Progress
+    dataForSave.state.a += 10;
     await ƒS.Character.show(characters.Protagonist, characters.Protagonist.pose.normal, ƒS.positionPercent(30, 150));
     await ƒS.update(1);
     await ƒS.Speech.tell(characters.Protagonist, text.Protagonist.T0000),
@@ -57,6 +58,7 @@ namespace Template {
     //await ƒS.Character.hide(characters.Ryu);
     await ƒS.update(1);
    // await ƒS.update(transition.clock.duration, transition.clock.alpha, transition.clock.edge);
+    
 
 
 
