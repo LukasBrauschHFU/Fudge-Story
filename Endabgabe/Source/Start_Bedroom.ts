@@ -43,21 +43,9 @@ namespace Template {
       },
       duration: 10,
       playmode: ƒS.ANIMATION_PLAYMODE.PLAYONCE
-  };
-    await ƒS.Speech.tell(characters.Prof, text.Prof.T0000), 
-    await ƒS.Location.show(locations.HFU);
-    //Show Professor here
-    await ƒS.update(2); 
-    await ƒS.Speech.tell(characters.Prof, text.Prof.T0001), 
-    // await ƒS.update(transition.clock.duration, transition.clock.alpha, transition.clock.edge);
-    await ƒS.Speech.tell(characters.Prof, text.Prof.T0002), 
-    await ƒS.Speech.tell(characters.Prof, text.Prof.T0003), 
-    dataForSave.Protagonist.name = await ƒS.Speech.getInput();
-    await ƒS.Speech.tell(characters.Prof, "I see. So your name is " + dataForSave.Protagonist.name);
-    //console.log(dataForSave.Protagonist.name);
-    await ƒS.Speech.tell(characters.Prof, "So, " + dataForSave.Protagonist.name + ", your own adventure is about to start. A world of Monsters awaits. Lets Go");
-    await ƒS.Location.show(locations.Black);
-    await ƒS.update(2);
+  }; 
+  //Set Protag name
+    characters.Protagonist.name = dataForSave.Protagonist.name;
     await ƒS.Speech.tell(characters.Narrator, text.Narrator.T0000), 
     
     await ƒS.Location.show(locations.Bedroom_Dark);

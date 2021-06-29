@@ -23,6 +23,8 @@ namespace Template {
       click: ""  
     };
 
+  
+
   export let locations = {
     HFU: {
       name: "HFU", 
@@ -80,7 +82,7 @@ namespace Template {
     name: "???"
   },
    Protagonist: {
-     name: "Protag",
+     name: "Baka",
      //Position
     origin: ƒS.ORIGIN.BOTTOMRIGHT,
     pose: {
@@ -121,23 +123,23 @@ namespace Template {
   };
 
 
-  //Add data to savedata (todo: replace protagonist from above(in anderen Dateien auch))
+    //Add data to savedata (todo: replace protagonist from above(in anderen Dateien auch))
   export let dataForSave = {
-    Protagonist: {
-      name: ""
-    },
-    Score: {
-      score: 0
-    },
-    MothrinAffection: {
-      score: 0
-    },
-    //Skala hier
-    state: {
-      a: 1
-    }
-
-  };
+      Protagonist: {
+        name: ""
+      },
+      Score: {
+        score: 0
+      },
+      MothrinAffection: {
+        score: 0
+      },
+      //Skala hier
+      state: {
+        a: 1
+      }
+  
+    };
 
 //Speicherfunktion
   document.addEventListener("keydown", hndKeypress);
@@ -228,6 +230,7 @@ namespace Template {
   //define the sequenceof scenes, each scene as an object with a reference
     let scenes: ƒS.Scenes = [
   //{ scene: Animation, name: "Animation"},
+  { scene: Introduction, name: "Introduction"},
   { scene: Start_Bedroom, name: "Start_Bedroom"},
   { scene: Ending_World, name: "Ending_World"}
  // { scene: Decisions, name: "Decisions"},
