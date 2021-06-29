@@ -1,0 +1,60 @@
+{
+  "bundle": {
+    "commonSourceDirectory": "..",
+    "sourceFiles": [
+      "../Source/01_Text.ts",
+      "../Source/Animation.ts",
+      "../Source/Decisions.ts",
+      "../Source/Decisions1.ts",
+      "../Source/Decisions2.ts",
+      "../Source/Decisions3.ts",
+      "../Source/Main.ts",
+      "../Source/Scene.ts",
+      "../Source/Start_Bedroom.ts"
+    ],
+    "js": {
+      "sections": [
+        {
+          "pos": 0,
+          "end": 13,
+          "kind": "prologue",
+          "data": "use strict"
+        },
+        {
+          "pos": 15,
+          "end": 27969,
+          "kind": "text"
+        }
+      ],
+      "sources": {
+        "prologues": [
+          {
+            "file": 0,
+            "text": "",
+            "directives": [
+              {
+                "pos": -1,
+                "end": -1,
+                "expression": {
+                  "pos": -1,
+                  "end": -1,
+                  "text": "use strict"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "dts": {
+      "sections": [
+        {
+          "pos": 0,
+          "end": 3002,
+          "kind": "text"
+        }
+      ]
+    }
+  },
+  "version": "3.9.7"
+}
