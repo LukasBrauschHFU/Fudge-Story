@@ -8,8 +8,10 @@
       "../Source/Decisions1.ts",
       "../Source/Decisions2.ts",
       "../Source/Decisions3.ts",
+      "../Source/Ending_World.ts",
       "../Source/Main.ts",
-      "../Source/Scene.ts"
+      "../Source/Scene.ts",
+      "../Source/Start_Bedroom.ts"
     ],
     "js": {
       "sections": [
@@ -21,7 +23,7 @@
         },
         {
           "pos": 15,
-          "end": 18383,
+          "end": 41963,
           "kind": "text"
         }
       ],
@@ -49,7 +51,7 @@
       "sections": [
         {
           "pos": 0,
-          "end": 2085,
+          "end": 3646,
           "kind": "text"
         }
       ]

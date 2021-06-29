@@ -17,6 +17,9 @@ declare namespace Template {
     function Decisions3(): ƒS.SceneReturn;
 }
 declare namespace Template {
+    function Ending_World(): ƒS.SceneReturn;
+}
+declare namespace Template {
     export import ƒ = FudgeCore;
     export import ƒS = FudgeStory;
     let transition: {
@@ -31,17 +34,56 @@ declare namespace Template {
         click: string;
     };
     let locations: {
-        city: {
+        HFU: {
             name: string;
             background: string;
         };
-        Dorm: {
+        HFU_Inner: {
+            name: string;
+            background: string;
+        };
+        HFU_Back: {
+            name: string;
+            background: string;
+        };
+        HFU_Room: {
+            name: string;
+            background: string;
+        };
+        HFU_Outside_I: {
+            name: string;
+            background: string;
+        };
+        HFU_Park: {
+            name: string;
+            background: string;
+        };
+        HFU_River: {
+            name: string;
+            background: string;
+        };
+        Park: {
+            name: string;
+            background: string;
+        };
+        Black: {
+            name: string;
+            background: string;
+        };
+        Bedroom_Light: {
+            name: string;
+            background: string;
+        };
+        Bedroom_Dark: {
             name: string;
             background: string;
         };
     };
     let characters: {
         Narrator: {
+            name: string;
+        };
+        Mystery: {
             name: string;
         };
         Protagonist: {
@@ -53,11 +95,25 @@ declare namespace Template {
                 sad: string;
             };
         };
-        Ryu: {
+        Prof: {
+            name: string;
+        };
+        Mothrin: {
             name: string;
             origin: ƒ.ORIGIN2D;
             pose: {
                 normal: string;
+                shadow: string;
+                smile: string;
+                sad: string;
+            };
+        };
+        Mother: {
+            name: string;
+            origin: ƒ.ORIGIN2D;
+            pose: {
+                normal: string;
+                shadow: string;
                 smile: string;
                 sad: string;
             };
@@ -68,6 +124,9 @@ declare namespace Template {
             name: string;
         };
         Score: {
+            score: number;
+        };
+        MothrinAffection: {
             score: number;
         };
         state: {
@@ -86,7 +145,12 @@ declare namespace Template {
             image: string;
         };
     };
+    function incrementSound(): void;
+    function decrementSound(): void;
 }
 declare namespace Template {
     function Scene(): ƒS.SceneReturn;
+}
+declare namespace Template {
+    function Start_Bedroom(): ƒS.SceneReturn;
 }
