@@ -17,6 +17,12 @@ declare namespace Template {
     function Decisions3(): ƒS.SceneReturn;
 }
 declare namespace Template {
+    function Ending_World(): ƒS.SceneReturn;
+}
+declare namespace Template {
+    function Introduction(): ƒS.SceneReturn;
+}
+declare namespace Template {
     export import ƒ = FudgeCore;
     export import ƒS = FudgeStory;
     let transition: {
@@ -31,11 +37,35 @@ declare namespace Template {
         click: string;
     };
     let locations: {
-        city: {
+        HFU: {
             name: string;
             background: string;
         };
-        HFU: {
+        HFU_Inner: {
+            name: string;
+            background: string;
+        };
+        HFU_Back: {
+            name: string;
+            background: string;
+        };
+        HFU_Room: {
+            name: string;
+            background: string;
+        };
+        HFU_Outside_I: {
+            name: string;
+            background: string;
+        };
+        HFU_Park: {
+            name: string;
+            background: string;
+        };
+        HFU_River: {
+            name: string;
+            background: string;
+        };
+        Park: {
             name: string;
             background: string;
         };
