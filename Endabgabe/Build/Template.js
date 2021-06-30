@@ -236,11 +236,19 @@ var Template;
         // console.log("FudgeStory Template Scene starting");
         let text = {
             Protagonist: {
-                T0000: "Seems like this is the end, huh",
-                T0001: "But I´m sure I heared something"
+                T0000: "What do you want to know ?",
+                T0001: "Sure, but I don´t know why that..",
+                T0002: "Satina, what happened to me ?",
+                T0003: "You mean to tell me that my dad was an angel ?",
+                T0004: "Don´t say that. I´m sure we can find a way"
             },
             Satina: {
-                T0000: "The final decision is still up to you"
+                T0000: "Could you eat this donut ? ",
+                T0001: "Just do it, please",
+                T0002: "Oh no, it is as I feared",
+                T0003: "The donut transformed you into your true self. Seems like there is something your mother didn´t tell you",
+                T0004: "Seems like it, yes. And that is very bad. Demons and angels can never be together",
+                T0005: "No, you don´t understand. I don´t mean this in some 'our parents will not understand' way. I mean that more in a literall way. If an angel and a demon get close to each other, the world will end"
             }
         };
         let animation = {
@@ -260,149 +268,180 @@ var Template;
             playmode: Template.ƒS.ANIMATION_PLAYMODE.PLAYONCE
         };
         //TEst Inventory
-        let pokeball = Template.items.Pokeball;
-        Template.ƒS.Inventory.add(pokeball);
         //console.log(test);
-        await Template.ƒS.Inventory.open();
         //var list = document.getElementsByTagName("UL")[0];
         //var usedItem = list.getElementsByTagName("LI")[0].innerHTML;
-        //Temp solution:
-        if (document.getElementById("Slavski_Pokeball") == null) {
-            console.log("No transform");
-        }
+        await Template.ƒS.Location.show(Template.locations.Black);
+        await Template.ƒS.update(1);
+        await Template.ƒS.Speech.tell(Template.characters.Narrator, "At the end of this VN you chose to go to the park with a girl named Satina");
+        await Template.ƒS.update(1);
+        await Template.ƒS.Location.show(Template.locations.HFU_Park);
+        await Template.ƒS.update(1);
         await Template.ƒS.Character.show(Template.characters.Satina, Template.characters.Satina.pose.normal, Template.ƒS.positionPercent(105, 130));
         await Template.ƒS.Character.show(Template.characters.Protagonist, Template.characters.Protagonist.pose.normal, Template.ƒS.positionPercent(30, 140));
         //Hier falls Donut verwendet wurde
         await Template.ƒS.update(1);
-        await Template.ƒS.Speech.tell(Template.characters.Protagonist, text.Protagonist.T0000),
-            Template.ƒS.Speech.clear();
-        //Show Characters
-        // await ƒS.Speech.tell(characters.Mystery, text.Mothrin.T0000),
-        await Template.ƒS.update(1);
-        //Decision
-        let endDecision = {
-            turnOnLight: "Get closer to Satina",
-            notTurnOnLight: "Stay where you are"
-        };
-        let endDecisionElement = await Template.ƒS.Menu.getInput(endDecision, "class");
-        switch (endDecisionElement) {
-            case endDecision.turnOnLight:
-                Template.ƒS.Speech.tell(Template.characters.Satina, "I made my choice");
-                await Template.ƒS.update(1);
-                //Animation here of mc getting closer to satina
-                await Template.ƒS.Character.animate(Template.characters.Protagonist, Template.characters.Protagonist.pose.normal, animation);
-                Template.ƒS.Sound.fade(Template.sound.air, 0.2, 0.1, true);
-                await Template.ƒS.update(3);
-                //Ending Animation here
-                await Template.ƒS.Location.show(Template.locations.HFU);
-                await Template.ƒS.update(2);
-                await Template.ƒS.Location.show(Template.locations.HFU_Inner);
-                await Template.ƒS.update(2);
-                //No await here
-                Template.ƒS.Speech.tell(Template.characters.Satina, "So this is how you decided ?");
-                await Template.ƒS.Location.show(Template.locations.HFU_Back);
-                await Template.ƒS.update(2);
-                await Template.ƒS.Location.show(Template.locations.HFU_Room);
-                await Template.ƒS.update(2);
-                await Template.ƒS.Location.show(Template.locations.HFU_Outside_I);
-                await Template.ƒS.update(2);
-                await Template.ƒS.Location.show(Template.locations.HFU_Park);
-                await Template.ƒS.update(2);
-                Template.ƒS.Speech.tell(Template.characters.Satina, "You and me, together in eternity even if it means sacrificing everything ?");
-                await Template.ƒS.Location.show(Template.locations.HFU_River);
-                await Template.ƒS.update(2);
-                await Template.ƒS.Location.show(Template.locations.Park);
-                await Template.ƒS.update(2);
-                await Template.ƒS.Location.show(Template.locations.Bedroom_Light);
-                await Template.ƒS.update(2);
-                await Template.ƒS.Location.show(Template.locations.HFU);
-                await Template.ƒS.update(1);
-                await Template.ƒS.Location.show(Template.locations.HFU_Inner);
-                await Template.ƒS.update(1);
-                await Template.ƒS.Location.show(Template.locations.HFU_Back);
-                await Template.ƒS.update(1);
-                await Template.ƒS.Location.show(Template.locations.HFU_Room);
-                await Template.ƒS.update(1);
-                Template.ƒS.Speech.tell(Template.characters.Satina, "You really seem to love me, do you ?");
-                await Template.ƒS.Location.show(Template.locations.HFU_Outside_I);
-                await Template.ƒS.update(1);
-                await Template.ƒS.Location.show(Template.locations.HFU_Park);
-                await Template.ƒS.update(1);
-                await Template.ƒS.Location.show(Template.locations.HFU_River);
-                await Template.ƒS.update(1);
-                await Template.ƒS.Location.show(Template.locations.Park);
-                await Template.ƒS.update(1);
-                await Template.ƒS.Location.show(Template.locations.Bedroom_Light);
-                await Template.ƒS.update(1);
-                await Template.ƒS.Location.show(Template.locations.HFU);
-                await Template.ƒS.update(0.8);
-                await Template.ƒS.Location.show(Template.locations.HFU_Inner);
-                await Template.ƒS.update(0.8);
-                await Template.ƒS.Location.show(Template.locations.HFU_Back);
-                await Template.ƒS.update(0.8);
-                Template.ƒS.Speech.tell(Template.characters.Satina, "But what can I say ?");
-                await Template.ƒS.Location.show(Template.locations.HFU_Room);
-                await Template.ƒS.update(0.8);
-                await Template.ƒS.Location.show(Template.locations.HFU_Outside_I);
-                await Template.ƒS.update(0.8);
-                await Template.ƒS.Location.show(Template.locations.HFU_Park);
-                await Template.ƒS.update(0.8);
-                await Template.ƒS.Location.show(Template.locations.HFU_River);
-                await Template.ƒS.update(0.8);
-                await Template.ƒS.Location.show(Template.locations.Park);
-                await Template.ƒS.update(0.8);
-                await Template.ƒS.Location.show(Template.locations.Bedroom_Light);
-                await Template.ƒS.update(0.8);
-                await Template.ƒS.Location.show(Template.locations.Black);
-                await Template.ƒS.update(0.8);
-                await Template.ƒS.Location.show(Template.locations.HFU);
-                await Template.ƒS.update(0.8);
-                await Template.ƒS.Location.show(Template.locations.Black);
-                await Template.ƒS.update(0.8);
-                await Template.ƒS.Location.show(Template.locations.HFU_Inner);
-                await Template.ƒS.update(0.8);
-                Template.ƒS.Speech.tell(Template.characters.Satina, "I feel the same way");
-                await Template.ƒS.Location.show(Template.locations.Black);
-                await Template.ƒS.update(0.8);
-                await Template.ƒS.Location.show(Template.locations.HFU_Back);
-                await Template.ƒS.update(0.8);
-                await Template.ƒS.Location.show(Template.locations.Black);
-                await Template.ƒS.update(0.8);
-                await Template.ƒS.Location.show(Template.locations.HFU_Room);
-                await Template.ƒS.update(0.4);
-                await Template.ƒS.Location.show(Template.locations.Black);
-                await Template.ƒS.update(0.4);
-                await Template.ƒS.Location.show(Template.locations.HFU_Outside_I);
-                await Template.ƒS.update(0.4);
-                await Template.ƒS.Location.show(Template.locations.Black);
-                await Template.ƒS.update(0.4);
-                await Template.ƒS.Location.show(Template.locations.HFU_Park);
-                await Template.ƒS.update(0.4);
-                await Template.ƒS.Location.show(Template.locations.Black);
-                await Template.ƒS.update(0.4);
-                await Template.ƒS.Location.show(Template.locations.HFU_River);
-                await Template.ƒS.update(0.4);
-                await Template.ƒS.Location.show(Template.locations.Black);
-                await Template.ƒS.update(0.4);
-                await Template.ƒS.Location.show(Template.locations.Park);
-                await Template.ƒS.update(0.4);
-                await Template.ƒS.Location.show(Template.locations.Black);
-                await Template.ƒS.update(0.4);
-                await Template.ƒS.Location.show(Template.locations.Bedroom_Light);
-                await Template.ƒS.update(0.4);
-                await Template.ƒS.Location.show(Template.locations.Black);
-                await Template.ƒS.update(0.4);
-                await Template.ƒS.Speech.tell(Template.characters.Satina, "Thank you, for everything");
-                await Template.ƒS.Character.hideAll();
-                await Template.ƒS.update(2);
-                await Template.ƒS.Speech.tell(Template.characters.Satina, "Goodbye, " + Template.dataForSave.Protagonist.name);
-                break;
-            case endDecision.notTurnOnLight:
-                Template.ƒS.Speech.tell(Template.characters.Satina, "I totally understand why you would be scared");
-                break;
+        Template.ƒS.Speech.clear();
+        //  ƒS.Speech.tell(characters.Narrator, "You decide to meet with Satina in the park");
+        await Template.ƒS.Speech.tell(Template.characters.Satina, Template.dataForSave.Protagonist.name + ", there is something I need to know");
+        await Template.ƒS.Speech.tell(Template.characters.Protagonist, text.Protagonist.T0000);
+        await Template.ƒS.Speech.tell(Template.characters.Satina, text.Satina.T0000);
+        let donut = Template.items.Donut;
+        Template.ƒS.Inventory.add(donut);
+        await Template.ƒS.Speech.tell(Template.characters.Protagonist, text.Protagonist.T0001);
+        await Template.ƒS.Speech.tell(Template.characters.Satina, text.Satina.T0001);
+        await Template.ƒS.update(2);
+        await Template.ƒS.Inventory.open();
+        //Temp solution:
+        if (document.getElementById("Hole-y_Donut") == null) {
+            Template.dataForSave.Transformation.istransformed = true;
+        }
+        //Hier transform-Strang
+        if (Template.dataForSave.Transformation.istransformed == true) {
+            await Template.ƒS.Character.hide(Template.characters.Protagonist);
+            await Template.ƒS.Character.show(Template.characters.Protagonist, Template.characters.Protagonist.pose.angel, Template.ƒS.positionPercent(30, 140));
+            await Template.ƒS.Speech.tell(Template.characters.Satina, text.Satina.T0002);
+            await Template.ƒS.Speech.tell(Template.characters.Protagonist, text.Protagonist.T0002);
+            await Template.ƒS.Speech.tell(Template.characters.Satina, text.Satina.T0003);
+            await Template.ƒS.Speech.tell(Template.characters.Protagonist, text.Protagonist.T0003);
+            await Template.ƒS.Speech.tell(Template.characters.Satina, text.Satina.T0004);
+            await Template.ƒS.Speech.tell(Template.characters.Protagonist, text.Protagonist.T0004);
+            await Template.ƒS.Speech.tell(Template.characters.Satina, text.Satina.T0005);
+            //Show Characters
+            // await ƒS.Speech.tell(characters.Mystery, text.Mothrin.T0000),
+            await Template.ƒS.update(1);
+            //Decision
+            let endDecision = {
+                turnOnLight: "Get closer to Satina",
+                notTurnOnLight: "Stay where you are"
+            };
+            let endDecisionElement = await Template.ƒS.Menu.getInput(endDecision, "class");
+            switch (endDecisionElement) {
+                case endDecision.turnOnLight:
+                    Template.ƒS.Speech.tell(Template.characters.Protagonist, "I don´t care for the world. The only thing that matters for me is that we can be together");
+                    await Template.ƒS.update(1);
+                    //Animation here of mc getting closer to satina
+                    await Template.ƒS.Character.animate(Template.characters.Protagonist, Template.characters.Protagonist.pose.angel, animation);
+                    Template.ƒS.Sound.fade(Template.sound.air, 0.2, 0.1, true);
+                    await Template.ƒS.update(3);
+                    //Ending Animation here
+                    await Template.ƒS.Location.show(Template.locations.HFU);
+                    await Template.ƒS.update(2);
+                    await Template.ƒS.Location.show(Template.locations.HFU_Inner);
+                    await Template.ƒS.update(2);
+                    //No await here
+                    Template.ƒS.Speech.tell(Template.characters.Satina, "So this is how you decided ?");
+                    await Template.ƒS.Location.show(Template.locations.HFU_Back);
+                    await Template.ƒS.update(2);
+                    await Template.ƒS.Location.show(Template.locations.HFU_Room);
+                    await Template.ƒS.update(2);
+                    await Template.ƒS.Location.show(Template.locations.HFU_Outside_I);
+                    await Template.ƒS.update(2);
+                    await Template.ƒS.Location.show(Template.locations.HFU_Park);
+                    await Template.ƒS.update(2);
+                    Template.ƒS.Speech.tell(Template.characters.Satina, "You and me, together in eternity even if it means sacrificing everything ?");
+                    await Template.ƒS.Location.show(Template.locations.HFU_River);
+                    await Template.ƒS.update(2);
+                    await Template.ƒS.Location.show(Template.locations.Park);
+                    await Template.ƒS.update(2);
+                    await Template.ƒS.Location.show(Template.locations.Bedroom_Light);
+                    await Template.ƒS.update(2);
+                    await Template.ƒS.Location.show(Template.locations.HFU);
+                    await Template.ƒS.update(1);
+                    await Template.ƒS.Location.show(Template.locations.HFU_Inner);
+                    await Template.ƒS.update(1);
+                    await Template.ƒS.Location.show(Template.locations.HFU_Back);
+                    await Template.ƒS.update(1);
+                    await Template.ƒS.Location.show(Template.locations.HFU_Room);
+                    await Template.ƒS.update(1);
+                    Template.ƒS.Speech.tell(Template.characters.Satina, "You really seem to love me, do you ?");
+                    await Template.ƒS.Location.show(Template.locations.HFU_Outside_I);
+                    await Template.ƒS.update(1);
+                    await Template.ƒS.Location.show(Template.locations.HFU_Park);
+                    await Template.ƒS.update(1);
+                    await Template.ƒS.Location.show(Template.locations.HFU_River);
+                    await Template.ƒS.update(1);
+                    await Template.ƒS.Location.show(Template.locations.Park);
+                    await Template.ƒS.update(1);
+                    await Template.ƒS.Location.show(Template.locations.Bedroom_Light);
+                    await Template.ƒS.update(1);
+                    await Template.ƒS.Location.show(Template.locations.HFU);
+                    await Template.ƒS.update(0.8);
+                    await Template.ƒS.Location.show(Template.locations.HFU_Inner);
+                    await Template.ƒS.update(0.8);
+                    await Template.ƒS.Location.show(Template.locations.HFU_Back);
+                    await Template.ƒS.update(0.8);
+                    Template.ƒS.Speech.tell(Template.characters.Satina, "But what can I say ?");
+                    await Template.ƒS.Location.show(Template.locations.HFU_Room);
+                    await Template.ƒS.update(0.8);
+                    await Template.ƒS.Location.show(Template.locations.HFU_Outside_I);
+                    await Template.ƒS.update(0.8);
+                    await Template.ƒS.Location.show(Template.locations.HFU_Park);
+                    await Template.ƒS.update(0.8);
+                    await Template.ƒS.Location.show(Template.locations.HFU_River);
+                    await Template.ƒS.update(0.8);
+                    await Template.ƒS.Location.show(Template.locations.Park);
+                    await Template.ƒS.update(0.8);
+                    await Template.ƒS.Location.show(Template.locations.Bedroom_Light);
+                    await Template.ƒS.update(0.8);
+                    await Template.ƒS.Location.show(Template.locations.Black);
+                    await Template.ƒS.update(0.8);
+                    await Template.ƒS.Location.show(Template.locations.HFU);
+                    await Template.ƒS.update(0.8);
+                    await Template.ƒS.Location.show(Template.locations.Black);
+                    await Template.ƒS.update(0.8);
+                    await Template.ƒS.Location.show(Template.locations.HFU_Inner);
+                    await Template.ƒS.update(0.8);
+                    Template.ƒS.Speech.tell(Template.characters.Satina, "I feel the same way");
+                    await Template.ƒS.Location.show(Template.locations.Black);
+                    await Template.ƒS.update(0.8);
+                    await Template.ƒS.Location.show(Template.locations.HFU_Back);
+                    await Template.ƒS.update(0.8);
+                    await Template.ƒS.Location.show(Template.locations.Black);
+                    await Template.ƒS.update(0.8);
+                    await Template.ƒS.Location.show(Template.locations.HFU_Room);
+                    await Template.ƒS.update(0.4);
+                    await Template.ƒS.Location.show(Template.locations.Black);
+                    await Template.ƒS.update(0.4);
+                    await Template.ƒS.Location.show(Template.locations.HFU_Outside_I);
+                    await Template.ƒS.update(0.4);
+                    await Template.ƒS.Location.show(Template.locations.Black);
+                    await Template.ƒS.update(0.4);
+                    await Template.ƒS.Location.show(Template.locations.HFU_Park);
+                    await Template.ƒS.update(0.4);
+                    await Template.ƒS.Location.show(Template.locations.Black);
+                    await Template.ƒS.update(0.4);
+                    await Template.ƒS.Location.show(Template.locations.HFU_River);
+                    await Template.ƒS.update(0.4);
+                    await Template.ƒS.Location.show(Template.locations.Black);
+                    await Template.ƒS.update(0.4);
+                    await Template.ƒS.Location.show(Template.locations.Park);
+                    await Template.ƒS.update(0.4);
+                    await Template.ƒS.Location.show(Template.locations.Black);
+                    await Template.ƒS.update(0.4);
+                    await Template.ƒS.Location.show(Template.locations.Bedroom_Light);
+                    await Template.ƒS.update(0.4);
+                    await Template.ƒS.Location.show(Template.locations.Black);
+                    await Template.ƒS.update(0.4);
+                    await Template.ƒS.Speech.tell(Template.characters.Satina, "Thank you, for everything");
+                    await Template.ƒS.Character.hideAll();
+                    await Template.ƒS.update(2);
+                    await Template.ƒS.Speech.tell(Template.characters.Satina, "Goodbye, " + Template.dataForSave.Protagonist.name);
+                    break;
+                case endDecision.notTurnOnLight:
+                    Template.ƒS.Speech.tell(Template.characters.Satina, "I´m glad you made the right choice");
+                    Template.ƒS.Speech.tell(Template.characters.Protagonist, "I´m still not completely sure what´s going on");
+                    Template.ƒS.Speech.tell(Template.characters.Satina, "Get some sleep over it. See you tomorrow");
+                    break;
+            }
+        }
+        else {
+            await Template.ƒS.Speech.tell(Template.characters.Satina, "So, you don´t trust me after all");
+            await Template.ƒS.Speech.tell(Template.characters.Protagonist, "No, that is not it. I just, well, don´t see a reason to eat this donut");
+            await Template.ƒS.Speech.tell(Template.characters.Satina, "That just sounds like a lame excuse. Goodbye, " + Template.dataForSave.Protagonist.name);
         }
         //Set Progress
-        Template.dataForSave.state.a += 100;
+        Template.dataForSave.state.a = 100;
         //Animation of Moth flying out of window at the end
         await Template.ƒS.Character.hideAll();
         Template.ƒS.Speech.clear();
@@ -418,14 +457,15 @@ var Template;
         // console.log("FudgeStory Template Scene starting");
         let text = {
             Prof: {
-                T0000: "Hello there! Welcome to the world of Monster People! My name is Pine! People call me the Monster Prof!",
-                T0001: "This world is inhabited by many different kind of Monster People. I myself study the differences between the Monster people and humans.",
+                T0000: "Hello there! Welcome to the world of monster people! My name is Pine! People call me the monster prof!",
+                T0001: "This world is inhabited by many different kind of monster people. I myself study the differences between the monster people and humans.",
                 T0002: "The only thing we know until now about monster people is that they one day appeared and since life alongside humans",
                 T0003: "But enough with the exposition. Tell me about yourself. What is your name ?"
             }
         };
         await Template.ƒS.Speech.tell(Template.characters.Prof, text.Prof.T0000),
             await Template.ƒS.Location.show(Template.locations.HFU);
+        await Template.ƒS.Character.show(Template.characters.Prof, Template.characters.Prof.pose.normal, Template.ƒS.positionPercent(65, 155));
         //Show Professor here
         await Template.ƒS.update(2);
         await Template.ƒS.Speech.tell(Template.characters.Prof, text.Prof.T0001),
@@ -435,10 +475,8 @@ var Template;
             Template.dataForSave.Protagonist.name = await Template.ƒS.Speech.getInput();
         await Template.ƒS.Speech.tell(Template.characters.Prof, "I see. So your name is " + Template.dataForSave.Protagonist.name);
         //console.log(dataForSave.Protagonist.name);
-        await Template.ƒS.Speech.tell(Template.characters.Prof, "So, " + Template.dataForSave.Protagonist.name + ", your own adventure is about to start. A world of Monsters awaits. Lets Go");
+        await Template.ƒS.Speech.tell(Template.characters.Prof, "So, " + Template.dataForSave.Protagonist.name + ", your own adventure is about to start. A world of monsters awaits. Lets Go");
         await Template.ƒS.Location.show(Template.locations.Black);
-        let pokeball = Template.items.Pokeball;
-        Template.ƒS.Inventory.add(pokeball);
         await Template.ƒS.update(2);
     }
     Template.Introduction = Introduction;
@@ -461,6 +499,8 @@ var Template;
     Template.sound = {
         //Musik
         air: "Audio/Air.mp3",
+        dio: "Audio/diooderso1.1.wav",
+        filler: "Audio/filler.mp3",
         //Sound
         click: ""
     };
@@ -526,11 +566,17 @@ var Template;
                 //Standartpose
                 normal: "Images/Characters/Protag.png",
                 smile: "",
-                sad: ""
+                sad: "",
+                angel: "Images/Characters/Protag_Angel.png"
             }
         },
         Prof: {
-            name: "Professor Pine"
+            name: "Professor Pine",
+            origin: Template.ƒS.ORIGIN.BOTTOMRIGHT,
+            pose: {
+                //Standartpose
+                normal: "Images/Characters/Prof.png"
+            }
         },
         Mothrin: {
             name: "Mothrin",
@@ -576,6 +622,9 @@ var Template;
         Score: {
             score: 0
         },
+        Transformation: {
+            istransformed: false
+        },
         MothrinAffection: {
             score: 0
         },
@@ -609,6 +658,11 @@ var Template;
             name: "Slavski_Pokeball_Alternate",
             description: "An alternate Item",
             image: "Images/Items/slavskiball_alt.png"
+        },
+        Donut: {
+            name: "Hole-y Donut",
+            description: "A suspicious looking donut",
+            image: "Images/Items/Donut.png"
         }
     };
     //Menü (Buttons)
@@ -665,8 +719,8 @@ var Template;
         //define the sequenceof scenes, each scene as an object with a reference
         let scenes = [
             //{ scene: Animation, name: "Animation"},
-            // { scene: Introduction, name: "Introduction"},
-            // { scene: Start_Bedroom, name: "Start_Bedroom"},
+            { scene: Template.Introduction, name: "Introduction" },
+            { scene: Template.Start_Bedroom, name: "Start_Bedroom" },
             { scene: Template.Ending_World, name: "Ending_World" }
             // { scene: Decisions, name: "Decisions"},
             // { scene: Decisions1, name: "Decisions1", id: "De2"},
@@ -765,7 +819,8 @@ var Template;
                 T0001: "But I´m sure I heared something"
             },
             Mothrin: {
-                T0000: "Protag, please, turn on the lights"
+                T0000: "Protag, please, turn on the lights",
+                T0001: "Hello. You left your window open earlier and somehow I fell asleep under your bed"
             },
             Mother: {
                 T0000: Template.dataForSave.Protagonist.name + "Kevin, you are 20 years old, stop worrying about your imagination and find a job already",
@@ -792,6 +847,7 @@ var Template;
         Template.characters.Protagonist.name = Template.dataForSave.Protagonist.name;
         await Template.ƒS.Speech.tell(Template.characters.Narrator, text.Narrator.T0000),
             await Template.ƒS.Location.show(Template.locations.Bedroom_Dark);
+        Template.ƒS.Sound.fade(Template.sound.dio, 0.2, 0.1, true);
         //Noises Here
         await Template.ƒS.update(1);
         await Template.ƒS.Speech.tell(Template.characters.Protagonist, text.Protagonist.T0000),
@@ -814,6 +870,8 @@ var Template;
             case lightDecision.turnOnLight:
                 //Insert sound of Lightswitch
                 Template.ƒS.Sound.play(Template.sound.click, 1);
+                Template.ƒS.Sound.fade(Template.sound.dio, 0, 0.1, false);
+                Template.ƒS.Sound.fade(Template.sound.filler, 0.2, 2, true);
                 await Template.ƒS.Location.show(Template.locations.Bedroom_Light);
                 await Template.ƒS.Character.hide(Template.characters.Mothrin);
                 await Template.ƒS.Character.show(Template.characters.Mothrin, Template.characters.Mothrin.pose.normal, Template.ƒS.positionPercent(105, 150));
@@ -823,29 +881,81 @@ var Template;
                 await Template.ƒS.update(1);
                 break;
             case lightDecision.notTurnOnLight:
+                await Template.ƒS.Speech.tell(Template.characters.Protagonist, "...");
                 await Template.ƒS.Speech.tell(Template.characters.Mothrin, "Fine, I´ll do it myself");
                 //Insert sound of Lightswitch
                 Template.ƒS.Sound.play(Template.sound.click, 1);
+                Template.ƒS.Sound.fade(Template.sound.dio, 0, 0.1, false);
+                Template.ƒS.Sound.fade(Template.sound.filler, 0.2, 2, true);
                 await Template.ƒS.Location.show(Template.locations.Bedroom_Light);
                 await Template.ƒS.Character.hide(Template.characters.Mothrin);
                 await Template.ƒS.Character.show(Template.characters.Mothrin, Template.characters.Mothrin.pose.normal, Template.ƒS.positionPercent(105, 150));
                 await Template.ƒS.update(1);
                 break;
         }
+        await Template.ƒS.Character.show(Template.characters.Protagonist, Template.characters.Protagonist.pose.normal, Template.ƒS.positionPercent(30, 140));
         //Set Progress
         Template.dataForSave.state.a += 1;
-        await Template.ƒS.Character.show(Template.characters.Protagonist, Template.characters.Protagonist.pose.normal, Template.ƒS.positionPercent(30, 150));
         await Template.ƒS.update(1);
-        await Template.ƒS.Speech.tell(Template.characters.Protagonist, text.Protagonist.T0000),
+        await Template.ƒS.Speech.tell(Template.characters.Mothrin, text.Mothrin.T0001),
             // await ƒS.Speech.tell(characters.Ryu, text.Ryu.T0001),
-            await Template.ƒS.Speech.tell(Template.characters.Protagonist, text.Protagonist.T0001),
             //  await ƒS.Speech.tell(characters.Ryu, text.Ryu.T0002),
             await Template.ƒS.update(1);
+        //Decision
+        let lightDecision2 = {
+            askFriendly: "Don´t I know you from somewhere ?",
+            askRude: "So you broke into my room ? I should call the police on you for invading my privacy"
+        };
+        let lightDecisionElement2 = await Template.ƒS.Menu.getInput(lightDecision2, "class");
+        switch (lightDecisionElement2) {
+            case lightDecision2.askRude:
+                await Template.ƒS.Speech.tell(Template.characters.Mothrin, "I swear, I didn´t want to do anything evil. I just saw the light in your room and wanted to get close to it");
+                await Template.ƒS.Speech.tell(Template.characters.Protagonist, "What kind of obsession is this ?"),
+                    await Template.ƒS.Speech.tell(Template.characters.Mothrin, "For us moths, that is totally normal behavior. We live for the light");
+                await Template.ƒS.Speech.tell(Template.characters.Protagonist, "I you say so....Oh well"),
+                    await Template.ƒS.update(1);
+                break;
+            case lightDecision2.askFriendly:
+                await Template.ƒS.Speech.tell(Template.characters.Mothrin, "Well, I´m studying at the local university. I once saw you getting kicked off the campus for getting too drunk there");
+                await Template.ƒS.Speech.tell(Template.characters.Protagonist, "Ah, yeah, I kinda remember seing you there. Weren´t you the girl that drank a whole bottle of *brand censored* Vodka at that campus party and tried to fight a fly girl because she stole one of your pizza slices ?"),
+                    await Template.ƒS.Speech.tell(Template.characters.Mothrin, "That might have been me, yes");
+                await Template.ƒS.update(1);
+                break;
+        }
+        await Template.ƒS.Speech.tell(Template.characters.Mother, "Is someone up there with you ? I hear voices");
+        await Template.ƒS.Speech.tell(Template.characters.Protagonist, "No mom - I´m just watching videos");
+        await Template.ƒS.Speech.tell(Template.characters.Mother, "You should look for a job instead");
+        await Template.ƒS.Speech.tell(Template.characters.Protagonist, "Yeah Yeah, tomorrow I will");
+        await Template.ƒS.Speech.tell(Template.characters.Mothrin, "Oh, you are looking for a job ? Our university is looking for a janitor since last spring. Wouldn´t that be a great opportunity ?");
+        let lightDecision3 = {
+            party: "I guess that would be quiet nice. (Might get invited to more parties that way)",
+            nowork: "I don´t really want to work. I want to become a popular streamer instead"
+        };
+        let lightDecisionElement3 = await Template.ƒS.Menu.getInput(lightDecision3, "class");
+        switch (lightDecisionElement3) {
+            case lightDecision3.party:
+                await Template.ƒS.Speech.tell(Template.characters.Mothrin, "Great. I can show you around campus tomorrow if you want");
+                await Template.ƒS.Speech.tell(Template.characters.Protagonist, "Sounds great. Thank you");
+                Template.dataForSave.MothrinAffection.score = Template.dataForSave.MothrinAffection.score + 1;
+                await Template.ƒS.update(1);
+                break;
+            case lightDecision3.nowork:
+                await Template.ƒS.Speech.tell(Template.characters.Mothrin, "Come on, it will be great, I promise it"),
+                    await Template.ƒS.Speech.tell(Template.characters.Protagonist, "Why should I believe you ? You just broke into my house and now I should suddenly trust you ?");
+                await Template.ƒS.Speech.tell(Template.characters.Mothrin, "Well, I mean, eh, ff you don´t want to I guess you don´t have too. I was just thinking you might like working at a place with many parties and university students. Also, you could get out of this");
+                await Template.ƒS.Speech.tell(Template.characters.Protagonist, "Hmm, You might be right. I´ll think about it. I mean, well,  I can at least go to the university with you tomorrow and have a look");
+                await Template.ƒS.Speech.tell(Template.characters.Mothrin, "Great, I see you tomorrow then");
+                await Template.ƒS.update(1);
+                break;
+        }
+        await Template.ƒS.Speech.tell(Template.characters.Mothrin, "Goodbye");
+        await Template.ƒS.Speech.tell(Template.characters.Protagonist, "See ya");
         //Animation of Moth flying out of window at the end
         await Template.ƒS.Character.hideAll();
+        Template.ƒS.Sound.fade(Template.sound.filler, 0, 0.1, false);
         Template.ƒS.Speech.clear();
         //await ƒS.Character.hide(characters.Ryu);
-        await Template.ƒS.update(1);
+        await Template.ƒS.update(2);
         // await ƒS.update(transition.clock.duration, transition.clock.alpha, transition.clock.edge);
     }
     Template.Start_Bedroom = Start_Bedroom;

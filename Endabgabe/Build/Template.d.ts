@@ -34,6 +34,8 @@ declare namespace Template {
     };
     let sound: {
         air: string;
+        dio: string;
+        filler: string;
         click: string;
     };
     let locations: {
@@ -96,10 +98,15 @@ declare namespace Template {
                 normal: string;
                 smile: string;
                 sad: string;
+                angel: string;
             };
         };
         Prof: {
             name: string;
+            origin: ƒ.ORIGIN2D;
+            pose: {
+                normal: string;
+            };
         };
         Mothrin: {
             name: string;
@@ -138,6 +145,9 @@ declare namespace Template {
         Score: {
             score: number;
         };
+        Transformation: {
+            istransformed: boolean;
+        };
         MothrinAffection: {
             score: number;
         };
@@ -152,6 +162,11 @@ declare namespace Template {
             image: string;
         };
         Pokeball2: {
+            name: string;
+            description: string;
+            image: string;
+        };
+        Donut: {
             name: string;
             description: string;
             image: string;
