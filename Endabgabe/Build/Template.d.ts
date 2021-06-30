@@ -33,7 +33,7 @@ declare namespace Template {
         };
     };
     let sound: {
-        backgroundTheme: string;
+        air: string;
         click: string;
     };
     let locations: {
@@ -107,6 +107,15 @@ declare namespace Template {
             pose: {
                 normal: string;
                 shadow: string;
+                smile: string;
+                sad: string;
+            };
+        };
+        Satina: {
+            name: string;
+            origin: ƒ.ORIGIN2D;
+            pose: {
+                normal: string;
                 smile: string;
                 sad: string;
             };

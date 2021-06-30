@@ -235,220 +235,174 @@ var Template;
     async function Ending_World() {
         // console.log("FudgeStory Template Scene starting");
         let text = {
-            Narrator: {
-                T0000: "You sleep in your room. Suddenly, you wake up because you hear a noise from under your bed"
-            },
-            Prof: {
-                T0000: "Hello there! Welcome to the world of Monster People! My name is Pine! People call me the Monster Prof!",
-                T0001: "This world is inhabited by many different kind of Monster People. I myself study the differences between the Monster people and humans.",
-                T0002: "The only thing we know until now about monster people is that they one day appeared and since life alongside humans",
-                T0003: "But enough with the exposition. Tell me about yourself. What is your name ?"
-            },
             Protagonist: {
-                T0000: "Mom, there is a monster under my bed",
+                T0000: "Seems like this is the end, huh",
                 T0001: "But I´m sure I heared something"
             },
-            Mothrin: {
-                T0000: "Protag, please, turn on the lights"
-            },
-            Mother: {
-                T0000: Template.dataForSave.Protagonist.name + "Kevin, you are 20 years old, stop worrying about your imagination and find a job already",
-                T0001: "No, Kevin, you didn´t. Go back to sleep now"
+            Satina: {
+                T0000: "The final decision is still up to you"
             }
         };
         let animation = {
             start: {
-                translation: Template.ƒS.positionPercent(105, 230)
+                translation: Template.ƒS.positionPercent(30, 140)
                 // rotation: 1,
                 //  scaling: new ƒS.Position(1, 1)
                 //  color: ƒS.Color.CSS("blue", 0)
             },
             end: {
-                translation: Template.ƒS.positionPercent(105, 150)
+                translation: Template.ƒS.positionPercent(70, 140)
                 //  rotation: 1,
                 //  scaling: new ƒS.Position(1, 1)
                 //  color: ƒS.Color.CSS("red", 0)
             },
-            duration: 10,
+            duration: 5,
             playmode: Template.ƒS.ANIMATION_PLAYMODE.PLAYONCE
         };
-        // await ƒS.Speech.tell(characters.Prof, text.Prof.T0000), 
-        //Ending Animation here
-        await Template.ƒS.Location.show(Template.locations.HFU);
-        await Template.ƒS.update(1);
-        await Template.ƒS.Location.show(Template.locations.HFU_Inner);
-        await Template.ƒS.update(1);
-        await Template.ƒS.Location.show(Template.locations.HFU_Back);
-        await Template.ƒS.update(1);
-        await Template.ƒS.Location.show(Template.locations.HFU_Room);
-        await Template.ƒS.update(1);
-        await Template.ƒS.Location.show(Template.locations.HFU_Outside_I);
-        await Template.ƒS.update(1);
-        await Template.ƒS.Location.show(Template.locations.HFU_Park);
-        await Template.ƒS.update(1);
-        await Template.ƒS.Location.show(Template.locations.HFU_River);
-        await Template.ƒS.update(1);
-        await Template.ƒS.Location.show(Template.locations.Park);
-        await Template.ƒS.update(1);
-        await Template.ƒS.Location.show(Template.locations.Bedroom_Light);
-        await Template.ƒS.update(1);
-        await Template.ƒS.Location.show(Template.locations.HFU);
-        await Template.ƒS.update(0.8);
-        await Template.ƒS.Location.show(Template.locations.HFU_Inner);
-        await Template.ƒS.update(0.8);
-        await Template.ƒS.Location.show(Template.locations.HFU_Back);
-        await Template.ƒS.update(0.8);
-        await Template.ƒS.Location.show(Template.locations.HFU_Room);
-        await Template.ƒS.update(0.8);
-        await Template.ƒS.Location.show(Template.locations.HFU_Outside_I);
-        await Template.ƒS.update(0.8);
-        await Template.ƒS.Location.show(Template.locations.HFU_Park);
-        await Template.ƒS.update(0.8);
-        await Template.ƒS.Location.show(Template.locations.HFU_River);
-        await Template.ƒS.update(0.8);
-        await Template.ƒS.Location.show(Template.locations.Park);
-        await Template.ƒS.update(0.8);
-        await Template.ƒS.Location.show(Template.locations.Bedroom_Light);
-        await Template.ƒS.update(0.8);
-        await Template.ƒS.Location.show(Template.locations.HFU);
-        await Template.ƒS.update(0.6);
-        await Template.ƒS.Location.show(Template.locations.HFU_Inner);
-        await Template.ƒS.update(0.6);
-        await Template.ƒS.Location.show(Template.locations.HFU_Back);
-        await Template.ƒS.update(0.6);
-        await Template.ƒS.Location.show(Template.locations.HFU_Room);
-        await Template.ƒS.update(0.6);
-        await Template.ƒS.Location.show(Template.locations.HFU_Outside_I);
-        await Template.ƒS.update(0.6);
-        await Template.ƒS.Location.show(Template.locations.HFU_Park);
-        await Template.ƒS.update(0.6);
-        await Template.ƒS.Location.show(Template.locations.HFU_River);
-        await Template.ƒS.update(0.6);
-        await Template.ƒS.Location.show(Template.locations.Park);
-        await Template.ƒS.update(0.6);
-        await Template.ƒS.Location.show(Template.locations.Bedroom_Light);
-        await Template.ƒS.update(0.6);
-        await Template.ƒS.Location.show(Template.locations.HFU);
-        await Template.ƒS.update(0.4);
-        await Template.ƒS.Location.show(Template.locations.HFU_Inner);
-        await Template.ƒS.update(0.4);
-        await Template.ƒS.Location.show(Template.locations.HFU_Back);
-        await Template.ƒS.update(0.4);
-        await Template.ƒS.Location.show(Template.locations.HFU_Room);
-        await Template.ƒS.update(0.4);
-        await Template.ƒS.Location.show(Template.locations.HFU_Outside_I);
-        await Template.ƒS.update(0.4);
-        await Template.ƒS.Location.show(Template.locations.HFU_Park);
-        await Template.ƒS.update(0.4);
-        await Template.ƒS.Location.show(Template.locations.HFU_River);
-        await Template.ƒS.update(0.4);
-        await Template.ƒS.Location.show(Template.locations.Park);
-        await Template.ƒS.update(0.4);
-        await Template.ƒS.Location.show(Template.locations.Bedroom_Light);
-        await Template.ƒS.update(0.4);
-        await Template.ƒS.Location.show(Template.locations.Black);
-        await Template.ƒS.update(0.4);
-        await Template.ƒS.Location.show(Template.locations.HFU);
-        await Template.ƒS.update(0.4);
-        await Template.ƒS.Location.show(Template.locations.Black);
-        await Template.ƒS.update(0.4);
-        await Template.ƒS.Location.show(Template.locations.HFU_Inner);
-        await Template.ƒS.update(0.4);
-        await Template.ƒS.Location.show(Template.locations.Black);
-        await Template.ƒS.update(0.4);
-        await Template.ƒS.Location.show(Template.locations.HFU_Back);
-        await Template.ƒS.update(0.4);
-        await Template.ƒS.Location.show(Template.locations.Black);
-        await Template.ƒS.update(0.4);
-        await Template.ƒS.Location.show(Template.locations.Black);
-        await Template.ƒS.update(0.4);
-        await Template.ƒS.Location.show(Template.locations.HFU_Room);
-        await Template.ƒS.update(0.4);
-        await Template.ƒS.Location.show(Template.locations.Black);
-        await Template.ƒS.update(0.4);
-        await Template.ƒS.Location.show(Template.locations.Black);
-        await Template.ƒS.update(0.4);
-        await Template.ƒS.Location.show(Template.locations.HFU_Outside_I);
-        await Template.ƒS.update(0.4);
-        await Template.ƒS.Location.show(Template.locations.Black);
-        await Template.ƒS.update(0.4);
-        await Template.ƒS.Location.show(Template.locations.HFU_Park);
-        await Template.ƒS.update(0.4);
-        await Template.ƒS.Location.show(Template.locations.Black);
-        await Template.ƒS.update(0.4);
-        await Template.ƒS.Location.show(Template.locations.HFU_River);
-        await Template.ƒS.update(0.4);
-        await Template.ƒS.Location.show(Template.locations.Black);
-        await Template.ƒS.update(0.4);
-        await Template.ƒS.Location.show(Template.locations.Park);
-        await Template.ƒS.update(0.4);
-        await Template.ƒS.Location.show(Template.locations.Black);
-        await Template.ƒS.update(0.4);
-        await Template.ƒS.Location.show(Template.locations.Bedroom_Light);
-        await Template.ƒS.update(0.4);
-        await Template.ƒS.Location.show(Template.locations.Black);
-        await Template.ƒS.update(0.4);
-        await Template.ƒS.Speech.tell(Template.characters.Prof, text.Prof.T0001),
-            // await ƒS.update(transition.clock.duration, transition.clock.alpha, transition.clock.edge);
-            await Template.ƒS.Speech.tell(Template.characters.Prof, text.Prof.T0002),
-            await Template.ƒS.Speech.tell(Template.characters.Prof, text.Prof.T0003),
-            Template.dataForSave.Protagonist.name = await Template.ƒS.Speech.getInput();
-        await Template.ƒS.Speech.tell(Template.characters.Prof, "I see. So your name is " + Template.dataForSave.Protagonist.name);
-        //console.log(dataForSave.Protagonist.name);
-        await Template.ƒS.Speech.tell(Template.characters.Prof, "So, " + Template.dataForSave.Protagonist.name + ", your own adventure is about to start. A world of Monsters awaits. Lets Go");
-        await Template.ƒS.Location.show(Template.locations.Black);
-        await Template.ƒS.update(2);
-        await Template.ƒS.Speech.tell(Template.characters.Narrator, text.Narrator.T0000),
-            await Template.ƒS.Location.show(Template.locations.Bedroom_Dark);
-        //Noises Here
+        //TEst Inventory
+        let pokeball = Template.items.Pokeball;
+        Template.ƒS.Inventory.add(pokeball);
+        //console.log(test);
+        await Template.ƒS.Inventory.open();
+        //var list = document.getElementsByTagName("UL")[0];
+        //var usedItem = list.getElementsByTagName("LI")[0].innerHTML;
+        //Temp solution:
+        if (document.getElementById("Slavski_Pokeball") == null) {
+            console.log("No transform");
+        }
+        await Template.ƒS.Character.show(Template.characters.Satina, Template.characters.Satina.pose.normal, Template.ƒS.positionPercent(105, 130));
+        await Template.ƒS.Character.show(Template.characters.Protagonist, Template.characters.Protagonist.pose.normal, Template.ƒS.positionPercent(30, 140));
+        //Hier falls Donut verwendet wurde
         await Template.ƒS.update(1);
         await Template.ƒS.Speech.tell(Template.characters.Protagonist, text.Protagonist.T0000),
-            await Template.ƒS.Speech.tell(Template.characters.Mother, text.Mother.T0000),
-            await Template.ƒS.Speech.tell(Template.characters.Protagonist, text.Protagonist.T0001),
-            await Template.ƒS.Speech.tell(Template.characters.Mother, text.Mother.T0001),
             Template.ƒS.Speech.clear();
         //Show Characters
-        await Template.ƒS.Character.animate(Template.characters.Mothrin, Template.characters.Mothrin.pose.shadow, animation);
+        // await ƒS.Speech.tell(characters.Mystery, text.Mothrin.T0000),
         await Template.ƒS.update(1);
-        await Template.ƒS.Speech.tell(Template.characters.Mystery, text.Mothrin.T0000),
-            await Template.ƒS.update(1);
         //Decision
-        let lightDecision = {
-            turnOnLight: "Turn on the lights",
-            notTurnOnLight: "Do not turn on the lights"
+        let endDecision = {
+            turnOnLight: "Get closer to Satina",
+            notTurnOnLight: "Stay where you are"
         };
-        let lightDecisionElement = await Template.ƒS.Menu.getInput(lightDecision, "class");
-        switch (lightDecisionElement) {
-            case lightDecision.turnOnLight:
-                //Insert sound of Lightswitch
-                Template.ƒS.Sound.play(Template.sound.click, 1);
+        let endDecisionElement = await Template.ƒS.Menu.getInput(endDecision, "class");
+        switch (endDecisionElement) {
+            case endDecision.turnOnLight:
+                Template.ƒS.Speech.tell(Template.characters.Satina, "I made my choice");
+                await Template.ƒS.update(1);
+                //Animation here of mc getting closer to satina
+                await Template.ƒS.Character.animate(Template.characters.Protagonist, Template.characters.Protagonist.pose.normal, animation);
+                Template.ƒS.Sound.fade(Template.sound.air, 0.2, 0.1, true);
+                await Template.ƒS.update(3);
+                //Ending Animation here
+                await Template.ƒS.Location.show(Template.locations.HFU);
+                await Template.ƒS.update(2);
+                await Template.ƒS.Location.show(Template.locations.HFU_Inner);
+                await Template.ƒS.update(2);
+                //No await here
+                Template.ƒS.Speech.tell(Template.characters.Satina, "So this is how you decided ?");
+                await Template.ƒS.Location.show(Template.locations.HFU_Back);
+                await Template.ƒS.update(2);
+                await Template.ƒS.Location.show(Template.locations.HFU_Room);
+                await Template.ƒS.update(2);
+                await Template.ƒS.Location.show(Template.locations.HFU_Outside_I);
+                await Template.ƒS.update(2);
+                await Template.ƒS.Location.show(Template.locations.HFU_Park);
+                await Template.ƒS.update(2);
+                Template.ƒS.Speech.tell(Template.characters.Satina, "You and me, together in eternity even if it means sacrificing everything ?");
+                await Template.ƒS.Location.show(Template.locations.HFU_River);
+                await Template.ƒS.update(2);
+                await Template.ƒS.Location.show(Template.locations.Park);
+                await Template.ƒS.update(2);
                 await Template.ƒS.Location.show(Template.locations.Bedroom_Light);
-                await Template.ƒS.Character.hide(Template.characters.Mothrin);
-                await Template.ƒS.Character.show(Template.characters.Mothrin, Template.characters.Mothrin.pose.normal, Template.ƒS.positionPercent(105, 150));
+                await Template.ƒS.update(2);
+                await Template.ƒS.Location.show(Template.locations.HFU);
                 await Template.ƒS.update(1);
-                await Template.ƒS.Speech.tell(Template.characters.Mothrin, "Thank you very much");
-                Template.dataForSave.MothrinAffection.score = Template.dataForSave.MothrinAffection.score + 2;
+                await Template.ƒS.Location.show(Template.locations.HFU_Inner);
                 await Template.ƒS.update(1);
+                await Template.ƒS.Location.show(Template.locations.HFU_Back);
+                await Template.ƒS.update(1);
+                await Template.ƒS.Location.show(Template.locations.HFU_Room);
+                await Template.ƒS.update(1);
+                Template.ƒS.Speech.tell(Template.characters.Satina, "You really seem to love me, do you ?");
+                await Template.ƒS.Location.show(Template.locations.HFU_Outside_I);
+                await Template.ƒS.update(1);
+                await Template.ƒS.Location.show(Template.locations.HFU_Park);
+                await Template.ƒS.update(1);
+                await Template.ƒS.Location.show(Template.locations.HFU_River);
+                await Template.ƒS.update(1);
+                await Template.ƒS.Location.show(Template.locations.Park);
+                await Template.ƒS.update(1);
+                await Template.ƒS.Location.show(Template.locations.Bedroom_Light);
+                await Template.ƒS.update(1);
+                await Template.ƒS.Location.show(Template.locations.HFU);
+                await Template.ƒS.update(0.8);
+                await Template.ƒS.Location.show(Template.locations.HFU_Inner);
+                await Template.ƒS.update(0.8);
+                await Template.ƒS.Location.show(Template.locations.HFU_Back);
+                await Template.ƒS.update(0.8);
+                Template.ƒS.Speech.tell(Template.characters.Satina, "But what can I say ?");
+                await Template.ƒS.Location.show(Template.locations.HFU_Room);
+                await Template.ƒS.update(0.8);
+                await Template.ƒS.Location.show(Template.locations.HFU_Outside_I);
+                await Template.ƒS.update(0.8);
+                await Template.ƒS.Location.show(Template.locations.HFU_Park);
+                await Template.ƒS.update(0.8);
+                await Template.ƒS.Location.show(Template.locations.HFU_River);
+                await Template.ƒS.update(0.8);
+                await Template.ƒS.Location.show(Template.locations.Park);
+                await Template.ƒS.update(0.8);
+                await Template.ƒS.Location.show(Template.locations.Bedroom_Light);
+                await Template.ƒS.update(0.8);
+                await Template.ƒS.Location.show(Template.locations.Black);
+                await Template.ƒS.update(0.8);
+                await Template.ƒS.Location.show(Template.locations.HFU);
+                await Template.ƒS.update(0.8);
+                await Template.ƒS.Location.show(Template.locations.Black);
+                await Template.ƒS.update(0.8);
+                await Template.ƒS.Location.show(Template.locations.HFU_Inner);
+                await Template.ƒS.update(0.8);
+                Template.ƒS.Speech.tell(Template.characters.Satina, "I feel the same way");
+                await Template.ƒS.Location.show(Template.locations.Black);
+                await Template.ƒS.update(0.8);
+                await Template.ƒS.Location.show(Template.locations.HFU_Back);
+                await Template.ƒS.update(0.8);
+                await Template.ƒS.Location.show(Template.locations.Black);
+                await Template.ƒS.update(0.8);
+                await Template.ƒS.Location.show(Template.locations.HFU_Room);
+                await Template.ƒS.update(0.4);
+                await Template.ƒS.Location.show(Template.locations.Black);
+                await Template.ƒS.update(0.4);
+                await Template.ƒS.Location.show(Template.locations.HFU_Outside_I);
+                await Template.ƒS.update(0.4);
+                await Template.ƒS.Location.show(Template.locations.Black);
+                await Template.ƒS.update(0.4);
+                await Template.ƒS.Location.show(Template.locations.HFU_Park);
+                await Template.ƒS.update(0.4);
+                await Template.ƒS.Location.show(Template.locations.Black);
+                await Template.ƒS.update(0.4);
+                await Template.ƒS.Location.show(Template.locations.HFU_River);
+                await Template.ƒS.update(0.4);
+                await Template.ƒS.Location.show(Template.locations.Black);
+                await Template.ƒS.update(0.4);
+                await Template.ƒS.Location.show(Template.locations.Park);
+                await Template.ƒS.update(0.4);
+                await Template.ƒS.Location.show(Template.locations.Black);
+                await Template.ƒS.update(0.4);
+                await Template.ƒS.Location.show(Template.locations.Bedroom_Light);
+                await Template.ƒS.update(0.4);
+                await Template.ƒS.Location.show(Template.locations.Black);
+                await Template.ƒS.update(0.4);
+                await Template.ƒS.Speech.tell(Template.characters.Satina, "Thank you, for everything");
+                await Template.ƒS.Character.hideAll();
+                await Template.ƒS.update(2);
+                await Template.ƒS.Speech.tell(Template.characters.Satina, "Goodbye, " + Template.dataForSave.Protagonist.name);
                 break;
-            case lightDecision.notTurnOnLight:
-                await Template.ƒS.Speech.tell(Template.characters.Mothrin, "Fine, I´ll do it myself");
-                //Insert sound of Lightswitch
-                Template.ƒS.Sound.play(Template.sound.click, 1);
-                await Template.ƒS.Location.show(Template.locations.Bedroom_Light);
-                await Template.ƒS.Character.hide(Template.characters.Mothrin);
-                await Template.ƒS.Character.show(Template.characters.Mothrin, Template.characters.Mothrin.pose.normal, Template.ƒS.positionPercent(105, 150));
-                await Template.ƒS.update(1);
+            case endDecision.notTurnOnLight:
+                Template.ƒS.Speech.tell(Template.characters.Satina, "I totally understand why you would be scared");
                 break;
         }
         //Set Progress
-        Template.dataForSave.state.a += 1;
-        await Template.ƒS.Character.show(Template.characters.Protagonist, Template.characters.Protagonist.pose.normal, Template.ƒS.positionPercent(30, 150));
-        await Template.ƒS.update(1);
-        await Template.ƒS.Speech.tell(Template.characters.Protagonist, text.Protagonist.T0000),
-            // await ƒS.Speech.tell(characters.Ryu, text.Ryu.T0001),
-            await Template.ƒS.Speech.tell(Template.characters.Protagonist, text.Protagonist.T0001),
-            //  await ƒS.Speech.tell(characters.Ryu, text.Ryu.T0002),
-            await Template.ƒS.update(1);
+        Template.dataForSave.state.a += 100;
         //Animation of Moth flying out of window at the end
         await Template.ƒS.Character.hideAll();
         Template.ƒS.Speech.clear();
@@ -483,6 +437,8 @@ var Template;
         //console.log(dataForSave.Protagonist.name);
         await Template.ƒS.Speech.tell(Template.characters.Prof, "So, " + Template.dataForSave.Protagonist.name + ", your own adventure is about to start. A world of Monsters awaits. Lets Go");
         await Template.ƒS.Location.show(Template.locations.Black);
+        let pokeball = Template.items.Pokeball;
+        Template.ƒS.Inventory.add(pokeball);
         await Template.ƒS.update(2);
     }
     Template.Introduction = Introduction;
@@ -504,7 +460,7 @@ var Template;
     //define sound
     Template.sound = {
         //Musik
-        backgroundTheme: "",
+        air: "Audio/Air.mp3",
         //Sound
         click: ""
     };
@@ -588,6 +544,17 @@ var Template;
                 sad: ""
             }
         },
+        Satina: {
+            name: "Satina",
+            //Position
+            origin: Template.ƒS.ORIGIN.BOTTOMRIGHT,
+            pose: {
+                //Standartpose
+                normal: "Images/Characters/Demon1.2.png",
+                smile: "",
+                sad: ""
+            }
+        },
         Mother: {
             name: "Mother",
             //Position
@@ -659,14 +626,14 @@ var Template;
     function incrementSound() {
         if (volume <= 100) {
             volume += 0.1;
-            Template.ƒS.Sound.setVolume(Template.sound.backgroundTheme, volume);
+            Template.ƒS.Sound.setVolume(Template.sound.air, volume);
         }
     }
     Template.incrementSound = incrementSound;
     function decrementSound() {
         if (volume > 0) {
             volume -= 0.1;
-            Template.ƒS.Sound.setVolume(Template.sound.backgroundTheme, volume);
+            Template.ƒS.Sound.setVolume(Template.sound.air, volume);
         }
     }
     Template.decrementSound = decrementSound;
@@ -698,8 +665,8 @@ var Template;
         //define the sequenceof scenes, each scene as an object with a reference
         let scenes = [
             //{ scene: Animation, name: "Animation"},
-            { scene: Template.Introduction, name: "Introduction" },
-            { scene: Template.Start_Bedroom, name: "Start_Bedroom" },
+            // { scene: Introduction, name: "Introduction"},
+            // { scene: Start_Bedroom, name: "Start_Bedroom"},
             { scene: Template.Ending_World, name: "Ending_World" }
             // { scene: Decisions, name: "Decisions"},
             // { scene: Decisions1, name: "Decisions1", id: "De2"},
