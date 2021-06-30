@@ -69,8 +69,14 @@ dialog[class="gameMenu"] {
   height: auto;
   padding: 5px;
   display: table;
-  bottom: 1270px;
-  right: 720px;
+  background-color: rgba(84, 84, 211, 0.335);
+  bottom: 175px;
+  left: 850px;
+}
+dialog[class="gameMenu"] > button {
+  background-color: rgba(158, 158, 235, 0.801);
+  bottom: 175px;
+  left: 850px;
 }
 
 speech{

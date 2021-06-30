@@ -236,7 +236,7 @@ var Template;
         // console.log("FudgeStory Template Scene starting");
         let text = {
             Protagonist: {
-                T0000: "What do you want to know ?",
+                T0000: "Is something wrong ?",
                 T0001: "Sure, but I don´t know why that..",
                 T0002: "Satina, what happened to me ?",
                 T0003: "You mean to tell me that my dad was an angel ?",
@@ -247,19 +247,19 @@ var Template;
                 T0001: "Just do it, please",
                 T0002: "Oh no, it is as I feared",
                 T0003: "The donut transformed you into your true self. Seems like there is something your mother didn´t tell you",
-                T0004: "Seems like it, yes. And that is very bad. Demons and angels can never be together",
-                T0005: "No, you don´t understand. I don´t mean this in some 'our parents will not understand' way. I mean that more in a literall way. If an angel and a demon get close to each other, the world will end"
+                T0004: "Seems like it, yes. And that is terrible. Demons and angels can never be together",
+                T0005: "No, you don´t understand. I don´t mean this in an 'our parents will not understand' way. I mean that more in a literal way. If an angel and a demon get close to each other, the world will end"
             }
         };
         let animation = {
             start: {
-                translation: Template.ƒS.positionPercent(30, 140)
+                translation: Template.ƒS.positionPercent(45, 140)
                 // rotation: 1,
                 //  scaling: new ƒS.Position(1, 1)
                 //  color: ƒS.Color.CSS("blue", 0)
             },
             end: {
-                translation: Template.ƒS.positionPercent(70, 140)
+                translation: Template.ƒS.positionPercent(80, 140)
                 //  rotation: 1,
                 //  scaling: new ƒS.Position(1, 1)
                 //  color: ƒS.Color.CSS("red", 0)
@@ -273,7 +273,7 @@ var Template;
         //var usedItem = list.getElementsByTagName("LI")[0].innerHTML;
         await Template.ƒS.Location.show(Template.locations.Black);
         await Template.ƒS.update(1);
-        await Template.ƒS.Speech.tell(Template.characters.Narrator, "At the end of this VN you chose to go to the park with a girl named Satina");
+        await Template.ƒS.Speech.tell(Template.characters.Narrator, "At the end of this VN you decided to go to the park with a girl named Satina.");
         await Template.ƒS.update(1);
         await Template.ƒS.Location.show(Template.locations.HFU_Park);
         await Template.ƒS.update(1);
@@ -283,7 +283,7 @@ var Template;
         await Template.ƒS.update(1);
         Template.ƒS.Speech.clear();
         //  ƒS.Speech.tell(characters.Narrator, "You decide to meet with Satina in the park");
-        await Template.ƒS.Speech.tell(Template.characters.Satina, Template.dataForSave.Protagonist.name + ", there is something I need to know");
+        await Template.ƒS.Speech.tell(Template.characters.Satina, Template.dataForSave.Protagonist.name + ", there is something I need to know.");
         await Template.ƒS.Speech.tell(Template.characters.Protagonist, text.Protagonist.T0000);
         await Template.ƒS.Speech.tell(Template.characters.Satina, text.Satina.T0000);
         let donut = Template.items.Donut;
@@ -299,7 +299,8 @@ var Template;
         //Hier transform-Strang
         if (Template.dataForSave.Transformation.istransformed == true) {
             await Template.ƒS.Character.hide(Template.characters.Protagonist);
-            await Template.ƒS.Character.show(Template.characters.Protagonist, Template.characters.Protagonist.pose.angel, Template.ƒS.positionPercent(30, 140));
+            await Template.ƒS.Character.show(Template.characters.Protagonist, Template.characters.Protagonist.pose.angel, Template.ƒS.positionPercent(45, 140));
+            await Template.ƒS.update(2);
             await Template.ƒS.Speech.tell(Template.characters.Satina, text.Satina.T0002);
             await Template.ƒS.Speech.tell(Template.characters.Protagonist, text.Protagonist.T0002);
             await Template.ƒS.Speech.tell(Template.characters.Satina, text.Satina.T0003);
@@ -318,7 +319,7 @@ var Template;
             let endDecisionElement = await Template.ƒS.Menu.getInput(endDecision, "class");
             switch (endDecisionElement) {
                 case endDecision.turnOnLight:
-                    Template.ƒS.Speech.tell(Template.characters.Protagonist, "I don´t care for the world. The only thing that matters for me is that we can be together");
+                    Template.ƒS.Speech.tell(Template.characters.Protagonist, "I don´t care for the world. The only thing that matters for me is that we can be together.");
                     await Template.ƒS.update(1);
                     //Animation here of mc getting closer to satina
                     await Template.ƒS.Character.animate(Template.characters.Protagonist, Template.characters.Protagonist.pose.angel, animation);
@@ -330,7 +331,7 @@ var Template;
                     await Template.ƒS.Location.show(Template.locations.HFU_Inner);
                     await Template.ƒS.update(2);
                     //No await here
-                    Template.ƒS.Speech.tell(Template.characters.Satina, "So this is how you decided ?");
+                    Template.ƒS.Speech.tell(Template.characters.Satina, "So this is how you decided?");
                     await Template.ƒS.Location.show(Template.locations.HFU_Back);
                     await Template.ƒS.update(2);
                     await Template.ƒS.Location.show(Template.locations.HFU_Room);
@@ -339,7 +340,7 @@ var Template;
                     await Template.ƒS.update(2);
                     await Template.ƒS.Location.show(Template.locations.HFU_Park);
                     await Template.ƒS.update(2);
-                    Template.ƒS.Speech.tell(Template.characters.Satina, "You and me, together in eternity even if it means sacrificing everything ?");
+                    Template.ƒS.Speech.tell(Template.characters.Satina, "You and me, together in eternity even if it means sacrificing everything?");
                     await Template.ƒS.Location.show(Template.locations.HFU_River);
                     await Template.ƒS.update(2);
                     await Template.ƒS.Location.show(Template.locations.Park);
@@ -354,7 +355,7 @@ var Template;
                     await Template.ƒS.update(1);
                     await Template.ƒS.Location.show(Template.locations.HFU_Room);
                     await Template.ƒS.update(1);
-                    Template.ƒS.Speech.tell(Template.characters.Satina, "You really seem to love me, do you ?");
+                    Template.ƒS.Speech.tell(Template.characters.Satina, "You really love me, don´t you?");
                     await Template.ƒS.Location.show(Template.locations.HFU_Outside_I);
                     await Template.ƒS.update(1);
                     await Template.ƒS.Location.show(Template.locations.HFU_Park);
@@ -371,7 +372,7 @@ var Template;
                     await Template.ƒS.update(0.8);
                     await Template.ƒS.Location.show(Template.locations.HFU_Back);
                     await Template.ƒS.update(0.8);
-                    Template.ƒS.Speech.tell(Template.characters.Satina, "But what can I say ?");
+                    Template.ƒS.Speech.tell(Template.characters.Satina, "But what can I say?");
                     await Template.ƒS.Location.show(Template.locations.HFU_Room);
                     await Template.ƒS.update(0.8);
                     await Template.ƒS.Location.show(Template.locations.HFU_Outside_I);
@@ -392,7 +393,7 @@ var Template;
                     await Template.ƒS.update(0.8);
                     await Template.ƒS.Location.show(Template.locations.HFU_Inner);
                     await Template.ƒS.update(0.8);
-                    Template.ƒS.Speech.tell(Template.characters.Satina, "I feel the same way");
+                    Template.ƒS.Speech.tell(Template.characters.Satina, "I feel the same way.");
                     await Template.ƒS.Location.show(Template.locations.Black);
                     await Template.ƒS.update(0.8);
                     await Template.ƒS.Location.show(Template.locations.HFU_Back);
@@ -423,26 +424,25 @@ var Template;
                     await Template.ƒS.update(0.4);
                     await Template.ƒS.Location.show(Template.locations.Black);
                     await Template.ƒS.update(0.4);
-                    await Template.ƒS.Speech.tell(Template.characters.Satina, "Thank you, for everything");
+                    await Template.ƒS.Speech.tell(Template.characters.Satina, "Thank you, for everything.");
                     await Template.ƒS.Character.hideAll();
                     await Template.ƒS.update(2);
                     await Template.ƒS.Speech.tell(Template.characters.Satina, "Goodbye, " + Template.dataForSave.Protagonist.name);
                     break;
                 case endDecision.notTurnOnLight:
-                    Template.ƒS.Speech.tell(Template.characters.Satina, "I´m glad you made the right choice");
-                    Template.ƒS.Speech.tell(Template.characters.Protagonist, "I´m still not completely sure what´s going on");
-                    Template.ƒS.Speech.tell(Template.characters.Satina, "Get some sleep over it. See you tomorrow");
+                    Template.ƒS.Speech.tell(Template.characters.Satina, "I´m glad you made the right choice.");
+                    Template.ƒS.Speech.tell(Template.characters.Protagonist, "I´m still not completely sure what´s going on.");
+                    Template.ƒS.Speech.tell(Template.characters.Satina, "Get some sleep over it. See you tomorrow.");
                     break;
             }
         }
         else {
-            await Template.ƒS.Speech.tell(Template.characters.Satina, "So, you don´t trust me after all");
-            await Template.ƒS.Speech.tell(Template.characters.Protagonist, "No, that is not it. I just, well, don´t see a reason to eat this donut");
+            await Template.ƒS.Speech.tell(Template.characters.Satina, "So, you don´t trust me after all.");
+            await Template.ƒS.Speech.tell(Template.characters.Protagonist, "No, that is not it. I just, well... don´t see a reason to do it.");
             await Template.ƒS.Speech.tell(Template.characters.Satina, "That just sounds like a lame excuse. Goodbye, " + Template.dataForSave.Protagonist.name);
         }
         //Set Progress
         Template.dataForSave.state.a = 100;
-        //Animation of Moth flying out of window at the end
         await Template.ƒS.Character.hideAll();
         Template.ƒS.Speech.clear();
         //await ƒS.Character.hide(characters.Ryu);
@@ -458,8 +458,8 @@ var Template;
         let text = {
             Prof: {
                 T0000: "Hello there! Welcome to the world of monster people! My name is Pine! People call me the monster prof!",
-                T0001: "This world is inhabited by many different kind of monster people. I myself study the differences between the monster people and humans.",
-                T0002: "The only thing we know until now about monster people is that they one day appeared and since life alongside humans",
+                T0001: "This world is inhabited by many different kind of monster people. I myself study the differences between monster people and humans.",
+                T0002: "The only thing we know until now about monster people is that they one day appeared and ever since then live alongside the human.",
                 T0003: "But enough with the exposition. Tell me about yourself. What is your name ?"
             }
         };
@@ -475,7 +475,7 @@ var Template;
             Template.dataForSave.Protagonist.name = await Template.ƒS.Speech.getInput();
         await Template.ƒS.Speech.tell(Template.characters.Prof, "I see. So your name is " + Template.dataForSave.Protagonist.name);
         //console.log(dataForSave.Protagonist.name);
-        await Template.ƒS.Speech.tell(Template.characters.Prof, "So, " + Template.dataForSave.Protagonist.name + ", your own adventure is about to start. A world of monsters awaits. Lets Go");
+        await Template.ƒS.Speech.tell(Template.characters.Prof, "So, " + Template.dataForSave.Protagonist.name + ", your own adventure is about to start. A world of monsters awaits. Let´s Go.");
         await Template.ƒS.Location.show(Template.locations.Black);
         await Template.ƒS.Character.hide(Template.characters.Prof);
         await Template.ƒS.update(2);
@@ -807,24 +807,24 @@ var Template;
         // console.log("FudgeStory Template Scene starting");
         let text = {
             Narrator: {
-                T0000: "You sleep in your room. Suddenly, you wake up because you hear a noise from under your bed"
+                T0000: "You sleep in your room. Suddenly, you wake up because you hear a noise from under your bed."
             },
             Prof: {
                 T0000: "Hello there! Welcome to the world of Monster People! My name is Pine! People call me the Monster Prof!",
                 T0001: "This world is inhabited by many different kind of Monster People. I myself study the differences between the Monster people and humans.",
-                T0002: "The only thing we know until now about monster people is that they one day appeared and since life alongside humans",
+                T0002: "The only thing we know until now about monster people is that they one day appeared and since life alongside humans.",
                 T0003: "But enough with the exposition. Tell me about yourself. What is your name ?"
             },
             Protagonist: {
                 T0000: "Mom, there is a monster under my bed",
-                T0001: "But I´m sure I heared something"
+                T0001: "But I´m sure I heard something"
             },
             Mothrin: {
                 T0000: "Protag, please, turn on the lights",
-                T0001: "Hello. You left your window open earlier and somehow I fell asleep under your bed"
+                T0001: "Hello. You left your window open earlier and somehow I fell asleep under your bed."
             },
             Mother: {
-                T0000: Template.dataForSave.Protagonist.name + "Kevin, you are 20 years old, stop worrying about your imagination and find a job already",
+                T0000: Template.dataForSave.Protagonist.name + "Kevin, you are 20 years old, stop worrying about your imagination and find a job already.",
                 T0001: "No, Kevin, you didn´t. Go back to sleep now"
             }
         };
@@ -852,14 +852,14 @@ var Template;
         //Noises Here
         await Template.ƒS.update(1);
         await Template.ƒS.Speech.tell(Template.characters.Protagonist, text.Protagonist.T0000),
-            await Template.ƒS.Speech.tell(Template.characters.Mother, Template.dataForSave.Protagonist.name + ", you are 20 years old, stop worrying about your imagination and find a job already");
+            await Template.ƒS.Speech.tell(Template.characters.Mother, Template.dataForSave.Protagonist.name + ", you are 20 years old, stop worrying about your imagination and find a job already.");
         await Template.ƒS.Speech.tell(Template.characters.Protagonist, text.Protagonist.T0001),
-            await Template.ƒS.Speech.tell(Template.characters.Mother, "No, " + Template.dataForSave.Protagonist.name + ", you didn´t. Go back to sleep now");
+            await Template.ƒS.Speech.tell(Template.characters.Mother, "No, " + Template.dataForSave.Protagonist.name + ", you didn´t. Go back to sleep now.");
         Template.ƒS.Speech.clear();
         //Show Characters
         await Template.ƒS.Character.animate(Template.characters.Mothrin, Template.characters.Mothrin.pose.shadow, animation);
         await Template.ƒS.update(1);
-        await Template.ƒS.Speech.tell(Template.characters.Mystery, text.Mothrin.T0000),
+        await Template.ƒS.Speech.tell(Template.characters.Mystery, Template.dataForSave.Protagonist.name + ", please, turn on the lights"),
             await Template.ƒS.update(1);
         //Decision
         let lightDecision = {
@@ -877,13 +877,13 @@ var Template;
                 await Template.ƒS.Character.hide(Template.characters.Mothrin);
                 await Template.ƒS.Character.show(Template.characters.Mothrin, Template.characters.Mothrin.pose.normal, Template.ƒS.positionPercent(105, 150));
                 await Template.ƒS.update(1);
-                await Template.ƒS.Speech.tell(Template.characters.Mothrin, "Thank you very much");
+                await Template.ƒS.Speech.tell(Template.characters.Mothrin, "Thank you very much.");
                 Template.dataForSave.MothrinAffection.score = Template.dataForSave.MothrinAffection.score + 2;
                 await Template.ƒS.update(1);
                 break;
             case lightDecision.notTurnOnLight:
                 await Template.ƒS.Speech.tell(Template.characters.Protagonist, "...");
-                await Template.ƒS.Speech.tell(Template.characters.Mothrin, "Fine, I´ll do it myself");
+                await Template.ƒS.Speech.tell(Template.characters.Mothrin, "Fine, I´ll do it myself.");
                 //Insert sound of Lightswitch
                 Template.ƒS.Sound.play(Template.sound.click, 1);
                 Template.ƒS.Sound.fade(Template.sound.dio, 0, 0.1, false);
@@ -905,52 +905,52 @@ var Template;
         //Decision
         let lightDecision2 = {
             askFriendly: "Don´t I know you from somewhere ?",
-            askRude: "So you broke into my room ? I should call the police on you for invading my privacy"
+            askRude: "So you broke into my room ? I should call the police on you for privacy intrusion."
         };
         let lightDecisionElement2 = await Template.ƒS.Menu.getInput(lightDecision2, "class");
         switch (lightDecisionElement2) {
             case lightDecision2.askRude:
-                await Template.ƒS.Speech.tell(Template.characters.Mothrin, "I swear, I didn´t want to do anything evil. I just saw the light in your room and wanted to get close to it");
+                await Template.ƒS.Speech.tell(Template.characters.Mothrin, "I swear, I didn´t want to do anything evil. I just saw the lights in your room and wanted to get close to them.");
                 await Template.ƒS.Speech.tell(Template.characters.Protagonist, "What kind of obsession is this ?"),
-                    await Template.ƒS.Speech.tell(Template.characters.Mothrin, "For us moths, that is totally normal behavior. We live for the light");
-                await Template.ƒS.Speech.tell(Template.characters.Protagonist, "I you say so....Oh well"),
+                    await Template.ƒS.Speech.tell(Template.characters.Mothrin, "For us moths, that is totally a normal behavior. We live for the light.");
+                await Template.ƒS.Speech.tell(Template.characters.Protagonist, "If you say so....Oh well."),
                     await Template.ƒS.update(1);
                 break;
             case lightDecision2.askFriendly:
-                await Template.ƒS.Speech.tell(Template.characters.Mothrin, "Well, I´m studying at the local university. I once saw you getting kicked off the campus for getting too drunk there");
-                await Template.ƒS.Speech.tell(Template.characters.Protagonist, "Ah, yeah, I kinda remember seing you there. Weren´t you the girl that drank a whole bottle of *brand censored* Vodka at that campus party and tried to fight a fly girl because she stole one of your pizza slices ?"),
-                    await Template.ƒS.Speech.tell(Template.characters.Mothrin, "That might have been me, yes");
+                await Template.ƒS.Speech.tell(Template.characters.Mothrin, "Well, I´m studying at the local university. I once saw you getting kicked off the campus for getting too drunk at a party.");
+                await Template.ƒS.Speech.tell(Template.characters.Protagonist, "Ah, yeah, I kinda remember seeing you there. Weren´t you that girl who drank a whole bottle of *brand censored* vodka at the campus party and tried to fight a fly girl because she stole one of your pizza slices ?"),
+                    await Template.ƒS.Speech.tell(Template.characters.Mothrin, "That might have been me, yes.");
                 await Template.ƒS.update(1);
                 break;
         }
-        await Template.ƒS.Speech.tell(Template.characters.Mother, "Is someone up there with you ? I hear voices");
-        await Template.ƒS.Speech.tell(Template.characters.Protagonist, "No mom - I´m just watching videos");
-        await Template.ƒS.Speech.tell(Template.characters.Mother, "You should look for a job instead");
-        await Template.ƒS.Speech.tell(Template.characters.Protagonist, "Yeah Yeah, tomorrow I will");
+        await Template.ƒS.Speech.tell(Template.characters.Mother, "Is someone up there with you? I hear voices.");
+        await Template.ƒS.Speech.tell(Template.characters.Protagonist, "No mom - I´m just watching videos.");
+        await Template.ƒS.Speech.tell(Template.characters.Mother, "You should look for a job instead.");
+        await Template.ƒS.Speech.tell(Template.characters.Protagonist, "Yeah Yeah, tomorrow I will.");
         await Template.ƒS.Speech.tell(Template.characters.Mothrin, "Oh, you are looking for a job ? Our university is looking for a janitor since last spring. Wouldn´t that be a great opportunity ?");
         let lightDecision3 = {
-            party: "I guess that would be quiet nice. (Might get invited to more parties that way)",
-            nowork: "I don´t really want to work. I want to become a popular streamer instead"
+            party: "I guess that would be quite nice. (Might get invited to more parties that way)",
+            nowork: "I don´t really want to work. I want to become a popular streamer instead."
         };
         let lightDecisionElement3 = await Template.ƒS.Menu.getInput(lightDecision3, "class");
         switch (lightDecisionElement3) {
             case lightDecision3.party:
-                await Template.ƒS.Speech.tell(Template.characters.Mothrin, "Great. I can show you around campus tomorrow if you want");
-                await Template.ƒS.Speech.tell(Template.characters.Protagonist, "Sounds great. Thank you");
+                await Template.ƒS.Speech.tell(Template.characters.Mothrin, "Great. I can show you around campus tomorrow if you want.");
+                await Template.ƒS.Speech.tell(Template.characters.Protagonist, "Sounds great. Thank you.");
                 Template.dataForSave.MothrinAffection.score = Template.dataForSave.MothrinAffection.score + 1;
                 await Template.ƒS.update(1);
                 break;
             case lightDecision3.nowork:
                 await Template.ƒS.Speech.tell(Template.characters.Mothrin, "Come on, it will be great, I promise it"),
                     await Template.ƒS.Speech.tell(Template.characters.Protagonist, "Why should I believe you ? You just broke into my house and now I should suddenly trust you ?");
-                await Template.ƒS.Speech.tell(Template.characters.Mothrin, "Well, I mean, eh, ff you don´t want to I guess you don´t have too. I was just thinking you might like working at a place with many parties and university students. Also, you could get out of this");
-                await Template.ƒS.Speech.tell(Template.characters.Protagonist, "Hmm, You might be right. I´ll think about it. I mean, well,  I can at least go to the university with you tomorrow and have a look");
-                await Template.ƒS.Speech.tell(Template.characters.Mothrin, "Great, I see you tomorrow then");
+                await Template.ƒS.Speech.tell(Template.characters.Mothrin, "Well, I mean, eh, if you don´t want to I guess you don´t have too. I was just thinking you might like working at a place with many parties and university students. Also, you could get out of 'this'.");
+                await Template.ƒS.Speech.tell(Template.characters.Protagonist, "Hmm, you might be right. I´ll think about it. I mean, well, I can at least go to the university with you tomorrow and have a look.");
+                await Template.ƒS.Speech.tell(Template.characters.Mothrin, "Great, I see you tomorrow then.");
                 await Template.ƒS.update(1);
                 break;
         }
-        await Template.ƒS.Speech.tell(Template.characters.Mothrin, "Goodbye");
-        await Template.ƒS.Speech.tell(Template.characters.Protagonist, "See ya");
+        await Template.ƒS.Speech.tell(Template.characters.Mothrin, "Goodbye.");
+        await Template.ƒS.Speech.tell(Template.characters.Protagonist, "See ya.");
         //Animation of Moth flying out of window at the end
         await Template.ƒS.Character.hideAll();
         Template.ƒS.Sound.fade(Template.sound.filler, 0, 0.1, false);
