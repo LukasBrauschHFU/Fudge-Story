@@ -17,13 +17,17 @@ namespace Template {
     //define sound
   export let sound = {
       //Musik
-      backgroundTheme: "",
+      air: "Audio/Air.mp3",
+
+      dio: "Audio/diooderso1.1.wav", 
+
+      filler: "Audio/filler.mp3",
 
       //Sound
       click: ""  
     };
 
-  
+   
 
   export let locations = {
     HFU: {
@@ -89,11 +93,17 @@ namespace Template {
       //Standartpose
       normal: "Images/Characters/Protag.png",
       smile: "",
-      sad: ""
+      sad: "",
+      angel: "Images/Characters/Protag_Angel.png"
     }
    },
    Prof: {
-    name: "Professor Pine"
+    name: "Professor Pine",
+    origin: ƒS.ORIGIN.BOTTOMRIGHT,
+    pose: {
+      //Standartpose
+      normal: "Images/Characters/Prof.png"
+    }
   },
  
    Mothrin: {
@@ -104,6 +114,17 @@ namespace Template {
       //Standartpose
       normal: "Images/Characters/Moth_Girl.png",
       shadow: "Images/Characters/Moth_Shadow.png",
+      smile: "",
+      sad: ""
+    }
+   },
+   Satina: {
+    name: "Satina",
+    //Position
+    origin: ƒS.ORIGIN.BOTTOMRIGHT,
+    pose: {
+      //Standartpose
+      normal: "Images/Characters/Demon1.2.png",
       smile: "",
       sad: ""
     }
@@ -130,6 +151,9 @@ namespace Template {
       },
       Score: {
         score: 0
+      },
+      Transformation: {
+        istransformed: false
       },
       MothrinAffection: {
         score: 0
@@ -167,6 +191,11 @@ namespace Template {
     name: "Slavski_Pokeball_Alternate",
     description: "An alternate Item", 
     image: "Images/Items/slavskiball_alt.png"
+  },
+  Donut: {
+    name: "Hole-y Donut",
+    description: "A suspicious looking donut", 
+    image: "Images/Items/Donut.png"
   }
 };
 
@@ -186,14 +215,14 @@ namespace Template {
   export function incrementSound(): void {
   if (volume <= 100) {
   volume += 0.1;
-  ƒS.Sound.setVolume(sound.backgroundTheme, volume);
+  ƒS.Sound.setVolume(sound.air, volume);
 }
   }
   
   export function decrementSound(): void {
     if (volume > 0) {
     volume -= 0.1;
-    ƒS.Sound.setVolume(sound.backgroundTheme, volume);
+    ƒS.Sound.setVolume(sound.air, volume);
   }
 }
   
@@ -221,7 +250,7 @@ namespace Template {
     }
 
   }
-
+  
 //Scene
   window.addEventListener("load", start);
   function start(_event: Event): void {
@@ -244,7 +273,6 @@ namespace Template {
  //Nochmal nachschauen auf Github
     let uiElement: HTMLElement = document.querySelector("[type=interface]");
     dataForSave.state = ƒS.Progress.setData(dataForSave.state, uiElement);
-
     uiElement.setAttribute("value", "50");
     console.log(uiElement);
   //setData for saved objects:
