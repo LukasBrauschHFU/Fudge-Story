@@ -477,6 +477,7 @@ var Template;
         //console.log(dataForSave.Protagonist.name);
         await Template.ƒS.Speech.tell(Template.characters.Prof, "So, " + Template.dataForSave.Protagonist.name + ", your own adventure is about to start. A world of monsters awaits. Lets Go");
         await Template.ƒS.Location.show(Template.locations.Black);
+        await Template.ƒS.Character.hide(Template.characters.Prof);
         await Template.ƒS.update(2);
     }
     Template.Introduction = Introduction;

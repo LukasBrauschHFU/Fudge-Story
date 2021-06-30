@@ -26,6 +26,7 @@ namespace Template {
       //console.log(dataForSave.Protagonist.name);
       await ƒS.Speech.tell(characters.Prof, "So, " + dataForSave.Protagonist.name + ", your own adventure is about to start. A world of monsters awaits. Lets Go");
       await ƒS.Location.show(locations.Black);
+      await ƒS.Character.hide(characters.Prof);
       await ƒS.update(2);
     }
   }
