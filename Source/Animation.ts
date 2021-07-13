@@ -12,6 +12,7 @@
             T0001: "<p>TickerTest</p>"
         }
     };
+    //Neue Methode in GitHub (Standart Animationen in die MAin)
     //Animation
     let animation: ƒS.AnimationDefinition = {
     start: {

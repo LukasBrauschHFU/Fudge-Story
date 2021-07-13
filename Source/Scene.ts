@@ -54,6 +54,7 @@ namespace Template {
     await ƒS.update(1);
     await ƒS.Character.hideAll();
 
+
     ƒS.Speech.clear();
     //await ƒS.Character.hide(characters.Ryu);
     await ƒS.update(1);

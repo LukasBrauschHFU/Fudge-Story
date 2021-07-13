@@ -20,7 +20,7 @@ export async function Decisions(): ƒS.SceneReturn {
     ƒS.Speech.setTickerDelays(30, 2);
 
     //Start Music
-    //ƒS.Sound.fade(sound.backgroundTheme, 0.2, 0.1, true);
+    ƒS.Sound.fade(sound.backgroundTheme, 0.2, 0.1, true);
 
     await ƒS.Location.show(locations.Dorm);
     await ƒS.update(1);

@@ -8,8 +8,13 @@
       "../Source/Decisions1.ts",
       "../Source/Decisions2.ts",
       "../Source/Decisions3.ts",
+      "../Source/Ending_Space.ts",
       "../Source/Ending_World.ts",
+      "../Source/Introduction.ts",
       "../Source/Main.ts",
+      "../Source/Meet_Satina.ts",
+      "../Source/Mothrin_Talk.ts",
+      "../Source/Park_Shubaru.ts",
       "../Source/Scene.ts",
       "../Source/Start_Bedroom.ts"
     ],
@@ -23,7 +28,7 @@
         },
         {
           "pos": 15,
-          "end": 41963,
+          "end": 67925,
           "kind": "text"
         }
       ],
@@ -51,7 +56,7 @@
       "sections": [
         {
           "pos": 0,
-          "end": 3646,
+          "end": 6139,
           "kind": "text"
         }
       ]

@@ -19,6 +19,12 @@ namespace Template {
       //Musik
       air: "Audio/Air.mp3",
 
+      dio: "Audio/diooderso1.1.wav", 
+
+      space: "Audio/Space.mp3", 
+
+      filler: "Audio/filler.mp3",
+
       //Sound
       click: ""  
     };
@@ -53,6 +59,14 @@ namespace Template {
     HFU_River: {
       name: "HFU_River", 
       background: "Images/Backgrounds/Uni_Back_River.png"
+    },
+    HFU_Bathroom: {
+      name: "HFU_Bathroom", 
+      background: "Images/Backgrounds/Uni_Bathroom.png"
+    },
+    HFU_Outside_L: {
+      name: "HFU_Outside_L", 
+      background: "Images/Backgrounds/Uni_Outside_L.png"
     },
     Park: {
       name: "Park", 
@@ -89,11 +103,41 @@ namespace Template {
       //Standartpose
       normal: "Images/Characters/Protag.png",
       smile: "",
-      sad: ""
+      sad: "",
+      angel: "Images/Characters/Protag_Angel.png"
     }
    },
    Prof: {
-    name: "Professor Pine"
+    name: "Professor Pine",
+    origin: ƒS.ORIGIN.BOTTOMRIGHT,
+    pose: {
+      //Standartpose
+      normal: "Images/Characters/Prof.png"
+    }
+  },
+  PlanetBig: {
+    name: "PlanetBig",
+    origin: ƒS.ORIGIN.BOTTOMRIGHT,
+    pose: {
+      //Standartpose
+      normal: "Images/Spoofs/PlanetBig.png"
+    }
+  },
+  PlanetSmall: {
+    name: "PlanetSmall",
+    origin: ƒS.ORIGIN.BOTTOMRIGHT,
+    pose: {
+      //Standartpose
+      normal: "Images/Spoofs/PlanetSmall.png"
+    }
+  },
+  BreadSun: {
+    name: "BreadSun",
+    origin: ƒS.ORIGIN.BOTTOMRIGHT,
+    pose: {
+      //Standartpose
+      normal: "Images/Spoofs/CubeFudge.png" 
+    }
   },
  
    Mothrin: {
@@ -110,6 +154,28 @@ namespace Template {
    },
    Satina: {
     name: "Satina",
+    //Position
+    origin: ƒS.ORIGIN.BOTTOMRIGHT,
+    pose: {
+      //Standartpose
+      normal: "Images/Characters/Demon1.2.png",
+      smile: "",
+      sad: ""
+    }
+   },
+   Shubaru: {
+    name: "Shubaru",
+    //Position
+    origin: ƒS.ORIGIN.BOTTOMRIGHT,
+    pose: {
+      //Standartpose
+      normal: "Images/Characters/Demon1.2.png",
+      smile: "",
+      sad: ""
+    }
+   },
+   Scales: {
+    name: "Scales",
     //Position
     origin: ƒS.ORIGIN.BOTTOMRIGHT,
     pose: {
@@ -148,6 +214,15 @@ namespace Template {
       MothrinAffection: {
         score: 0
       },
+      SatinaAffection: {
+        score: 0
+      },
+      ShubaruAffection: {
+        score: 0
+      },
+      ScalesAffection: {
+        score: 0
+      },
       //Skala hier
       state: {
         a: 1
@@ -181,6 +256,15 @@ namespace Template {
     name: "Slavski_Pokeball_Alternate",
     description: "An alternate Item", 
     image: "Images/Items/slavskiball_alt.png"
+  },
+  Donut: {
+    name: "Hole-y Donut",
+    description: "A suspicious looking donut", 
+    image: "Images/Items/Donut.png",
+    //Add function
+    handler: changeform
+    //zum nicht entfernen:
+    //static: true
   }
 };
 
@@ -200,18 +284,20 @@ namespace Template {
   export function incrementSound(): void {
   if (volume <= 100) {
   volume += 0.1;
-  ƒS.Sound.setVolume(sound.air, volume);
+  ƒS.Sound.setMasterVolume(volume);
 }
   }
   
   export function decrementSound(): void {
     if (volume > 0) {
     volume -= 0.1;
-    ƒS.Sound.setVolume(sound.air, volume);
+    ƒS.Sound.setMasterVolume(volume);
   }
 }
   
-
+  function changeform(): void {
+  dataForSave.Transformation.istransformed = true; 
+ }
 // Menu - create Menu with buttons
   let gameMenu: ƒS.Menu;
 
@@ -243,18 +329,17 @@ namespace Template {
     gameMenu = ƒS.Menu.create(inGameMenu, buttonFunctionalities, "gameMenu");
   //define the sequenceof scenes, each scene as an object with a reference
     let scenes: ƒS.Scenes = [
-  //{ scene: Animation, name: "Animation"},
  // { scene: Introduction, name: "Introduction"},
  // { scene: Start_Bedroom, name: "Start_Bedroom"},
-  { scene: Ending_World, name: "Ending_World"}
- // { scene: Decisions, name: "Decisions"},
- // { scene: Decisions1, name: "Decisions1", id: "De2"},
- // { scene: Decisions2, name: "Decisions2", id: "De3"},
- // { scene: Decisions3, name: "Decisions3", id: "De4"}
+  { scene: Meet_Satina, name: "Meet_Satina"},
+ // { scene: Ending_World, name: "Ending_World"}, 
+  { scene: Park_Shubaru, name: "Park_Shubaru"},  
+  { scene: Ending_Space, name: "Ending_Space"}  
+
   ];
 
   //Meter hier hin 
- //setData for saved objects, Alternative:
+ //setData for saved objects, Alternative: 
  //Nochmal nachschauen auf Github
     let uiElement: HTMLElement = document.querySelector("[type=interface]");
     dataForSave.state = ƒS.Progress.setData(dataForSave.state, uiElement);
@@ -266,6 +351,6 @@ namespace Template {
   //start the sequence
     ƒS.Progress.go(scenes);
 }
-
+ 
 
 }

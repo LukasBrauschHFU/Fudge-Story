@@ -17,23 +17,32 @@ declare namespace Template {
     function Decisions3(): ƒS.SceneReturn;
 }
 declare namespace Template {
+    function Ending_Space(): ƒS.SceneReturn;
+}
+declare namespace Template {
     function Ending_World(): ƒS.SceneReturn;
+}
+declare namespace Template {
+    function Introduction(): ƒS.SceneReturn;
 }
 declare namespace Template {
     export import ƒ = FudgeCore;
     export import ƒS = FudgeStory;
-    let transition: {
+    export let transition: {
         clock: {
             duration: number;
             alpha: string;
             edge: number;
         };
     };
-    let sound: {
-        backgroundTheme: string;
+    export let sound: {
+        air: string;
+        dio: string;
+        space: string;
+        filler: string;
         click: string;
     };
-    let locations: {
+    export let locations: {
         HFU: {
             name: string;
             background: string;
@@ -62,6 +71,14 @@ declare namespace Template {
             name: string;
             background: string;
         };
+        HFU_Bathroom: {
+            name: string;
+            background: string;
+        };
+        HFU_Outside_L: {
+            name: string;
+            background: string;
+        };
         Park: {
             name: string;
             background: string;
@@ -79,7 +96,7 @@ declare namespace Template {
             background: string;
         };
     };
-    let characters: {
+    export let characters: {
         Narrator: {
             name: string;
         };
@@ -93,10 +110,36 @@ declare namespace Template {
                 normal: string;
                 smile: string;
                 sad: string;
+                angel: string;
             };
         };
         Prof: {
             name: string;
+            origin: ƒ.ORIGIN2D;
+            pose: {
+                normal: string;
+            };
+        };
+        PlanetBig: {
+            name: string;
+            origin: ƒ.ORIGIN2D;
+            pose: {
+                normal: string;
+            };
+        };
+        PlanetSmall: {
+            name: string;
+            origin: ƒ.ORIGIN2D;
+            pose: {
+                normal: string;
+            };
+        };
+        BreadSun: {
+            name: string;
+            origin: ƒ.ORIGIN2D;
+            pose: {
+                normal: string;
+            };
         };
         Mothrin: {
             name: string;
@@ -104,6 +147,33 @@ declare namespace Template {
             pose: {
                 normal: string;
                 shadow: string;
+                smile: string;
+                sad: string;
+            };
+        };
+        Satina: {
+            name: string;
+            origin: ƒ.ORIGIN2D;
+            pose: {
+                normal: string;
+                smile: string;
+                sad: string;
+            };
+        };
+        Shubaru: {
+            name: string;
+            origin: ƒ.ORIGIN2D;
+            pose: {
+                normal: string;
+                smile: string;
+                sad: string;
+            };
+        };
+        Scales: {
+            name: string;
+            origin: ƒ.ORIGIN2D;
+            pose: {
+                normal: string;
                 smile: string;
                 sad: string;
             };
@@ -119,21 +189,33 @@ declare namespace Template {
             };
         };
     };
-    let dataForSave: {
+    export let dataForSave: {
         Protagonist: {
             name: string;
         };
         Score: {
             score: number;
         };
+        Transformation: {
+            istransformed: boolean;
+        };
         MothrinAffection: {
+            score: number;
+        };
+        SatinaAffection: {
+            score: number;
+        };
+        ShubaruAffection: {
+            score: number;
+        };
+        ScalesAffection: {
             score: number;
         };
         state: {
             a: number;
         };
     };
-    let items: {
+    export let items: {
         Pokeball: {
             name: string;
             description: string;
@@ -144,9 +226,26 @@ declare namespace Template {
             description: string;
             image: string;
         };
+        Donut: {
+            name: string;
+            description: string;
+            image: string;
+            handler: typeof changeform;
+        };
     };
-    function incrementSound(): void;
-    function decrementSound(): void;
+    export function incrementSound(): void;
+    export function decrementSound(): void;
+    function changeform(): void;
+    export {};
+}
+declare namespace Template {
+    function Meet_Satina(): ƒS.SceneReturn;
+}
+declare namespace Template {
+    function Mothrin_Talk(): ƒS.SceneReturn;
+}
+declare namespace Template {
+    function Park_Shubaru(): ƒS.SceneReturn;
 }
 declare namespace Template {
     function Scene(): ƒS.SceneReturn;
