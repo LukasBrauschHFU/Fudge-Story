@@ -99,7 +99,7 @@
        break;  
       } 
 
-    await ƒS.Character.show(characters.Protagonist, characters.Protagonist.pose.normal, ƒS.positionPercent(30, 140));
+    await ƒS.Character.show(characters.Protagonist, characters.Protagonist.pose.normal, ƒS.positionPercent(29, 150));
     //Set Progress
     dataForSave.state.a += 1;
     await ƒS.update(1);

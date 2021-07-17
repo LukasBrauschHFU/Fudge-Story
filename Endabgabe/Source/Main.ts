@@ -21,6 +21,8 @@ namespace Template {
 
       dio: "Audio/diooderso1.1.wav", 
 
+      space: "Audio/Space.mp3", 
+
       filler: "Audio/filler.mp3",
 
       //Sound
@@ -58,6 +60,14 @@ namespace Template {
       name: "HFU_River", 
       background: "Images/Backgrounds/Uni_Back_River.png"
     },
+    HFU_Bathroom: {
+      name: "HFU_Bathroom", 
+      background: "Images/Backgrounds/Uni_Bathroom.png"
+    },
+    HFU_Outside_L: {
+      name: "HFU_Outside_L", 
+      background: "Images/Backgrounds/Uni_Outside_L.png"
+    },
     Park: {
       name: "Park", 
       background: "Images/Backgrounds/Park.png"
@@ -86,15 +96,16 @@ namespace Template {
     name: "???"
   },
    Protagonist: {
-     name: "Baka",
+     name: "Default",
      //Position
     origin: ƒS.ORIGIN.BOTTOMRIGHT,
     pose: {
       //Standartpose
       normal: "Images/Characters/Protag.png",
-      smile: "",
-      sad: "",
-      angel: "Images/Characters/Protag_Angel.png"
+      angel: "Images/Characters/Protag_Angel.png",
+      happy: "Images/Characters/Protag_Happy.png",
+      sad: "Images/Characters/Protag_Sad.png",
+      angry: "Images/Characters/Protag_Angry.png"
     }
    },
    Prof: {
@@ -103,6 +114,30 @@ namespace Template {
     pose: {
       //Standartpose
       normal: "Images/Characters/Prof.png"
+    }
+  },
+  PlanetBig: {
+    name: "PlanetBig",
+    origin: ƒS.ORIGIN.BOTTOMRIGHT,
+    pose: {
+      //Standartpose
+      normal: "Images/Spoofs/PlanetBig.png"
+    }
+  },
+  PlanetSmall: {
+    name: "PlanetSmall",
+    origin: ƒS.ORIGIN.BOTTOMRIGHT,
+    pose: {
+      //Standartpose
+      normal: "Images/Spoofs/PlanetSmall.png"
+    }
+  },
+  BreadSun: {
+    name: "BreadSun",
+    origin: ƒS.ORIGIN.BOTTOMRIGHT,
+    pose: {
+      //Standartpose
+      normal: "Images/Spoofs/CubeFudge.png" 
     }
   },
  
@@ -114,8 +149,9 @@ namespace Template {
       //Standartpose
       normal: "Images/Characters/Moth_Girl.png",
       shadow: "Images/Characters/Moth_Shadow.png",
-      smile: "",
-      sad: ""
+      happy: "Images/Characters/Moth_Happy.png",
+      sad: "Images/Characters/Moth_Sad.png",
+      angry: "Images/Characters/Moth_Angry.png"
     }
    },
    Satina: {
@@ -124,9 +160,34 @@ namespace Template {
     origin: ƒS.ORIGIN.BOTTOMRIGHT,
     pose: {
       //Standartpose
-      normal: "Images/Characters/Demon1.2.png",
-      smile: "",
-      sad: ""
+      normal: "Images/Characters/Demon.png",
+      happy: "Images/Characters/Demon_Happy.png",
+      sad: "Images/Characters/Demon_Sad.png",
+      angry: "Images/Characters/Demon_Angry.png"
+    }
+   },
+   Shubaru: {
+    name: "Shubaru",
+    //Position
+    origin: ƒS.ORIGIN.BOTTOMRIGHT,
+    pose: {
+      //Standartpose
+      normal: "Images/Characters/Shubaru.png",
+      happy: "Images/Characters/Shubaru_Happy.png",
+      sad: "Images/Characters/Shubaru_Sad.png",
+      angry: "Images/Characters/Shubaru_Angry.png"
+    }
+   },
+   Scales: {
+    name: "Scales",
+    //Position
+    origin: ƒS.ORIGIN.BOTTOMRIGHT,
+    pose: {
+      //Standartpose
+      normal: "Images/Characters/Scales.png",
+      happy: "Images/Characters/Scales_Happy.png",
+      sad: "Images/Characters/Scales_Sad.png",
+      angry: "Images/Characters/Scales_Angry.png"
     }
    },
    Mother: {
@@ -135,10 +196,7 @@ namespace Template {
     origin: ƒS.ORIGIN.BOTTOMRIGHT,
     pose: {
       //Standartpose
-      normal: "",
-      shadow: "",
-      smile: "",
-      sad: ""
+      normal: ""
     }
    }
   };
@@ -155,8 +213,32 @@ namespace Template {
       Transformation: {
         istransformed: false
       },
+      usedDonut: {
+        used: false
+      },
+      usedBread: {
+        used: false
+      },
+      usedChilli: {
+        used: false
+      },
+      usedFlashlight: {
+        used: false
+      },
       MothrinAffection: {
         score: 0
+      },
+      SatinaAffection: {
+        score: 0
+      },
+      ShubaruAffection: {
+        score: 0
+      },
+      ScalesAffection: {
+        score: 0
+      },
+      Interacted_with_Scales: {
+        boolean: false
       },
       //Skala hier
       state: {
@@ -177,25 +259,68 @@ namespace Template {
         console.log("Load");
         await ƒS.Progress.load();
         break;  
+  
+  case ƒ.KEYBOARD_CODE.I:
+        ƒS.Inventory.open();
+        break;
   }
 }
 
 //Items
   export let items = {
-  Pokeball: {
-    name: "Slavski_Pokeball",
-    description: "A Pokeball created to catch slav type Pokemon", 
-    image: "Images/Items/slavskiball.png"
-  },
-  Pokeball2: {
-    name: "Slavski_Pokeball_Alternate",
-    description: "An alternate Item", 
-    image: "Images/Items/slavskiball_alt.png"
-  },
   Donut: {
     name: "Hole-y Donut",
     description: "A suspicious looking donut", 
-    image: "Images/Items/Donut.png"
+    image: "Images/Items/Donut.png",
+    //Add function
+    handler: changeform
+    //zum nicht entfernen:
+    //static: true
+  },
+  Mothdust: {
+    name: "Mothdust",
+    description: "A jar filled with mothdust", 
+    image: "Images/Items/MothDust.png",
+    //Add function
+    //handler: changeform
+    //zum nicht entfernen:
+    static: true
+  },
+  EvilDonut: {
+    name: "Unhole-y Donut",
+    description: "An evil, but tasty looking donut", 
+    image: "Images/Items/EvilDonut.png",
+    //Add function
+    handler: useDonut
+    //zum nicht entfernen:
+    //static: true
+  },
+  Bread: {
+    name: "Bread",
+    description: "Plain bread", 
+    image: "Images/Items/Bread.png",
+    //Add function
+    handler: useBread
+    //zum nicht entfernen:
+    //static: true
+  },
+  Chilli: {
+    name: "Chilli",
+    description: "Delicious looking Chilli con Carne", 
+    image: "Images/Items/Chilli.png",
+    //Add function
+    handler: useChilli
+    //zum nicht entfernen:
+    //static: true
+  },
+  Flashlight: {
+    name: "Flashlight",
+    description: "A flashlight", 
+    image: "Images/Items/Flashlight.png",
+    //Add function
+    handler: useFlashlight
+    //zum nicht entfernen: 
+    //static: true
   }
 };
 
@@ -215,18 +340,32 @@ namespace Template {
   export function incrementSound(): void {
   if (volume <= 100) {
   volume += 0.1;
-  ƒS.Sound.setVolume(sound.air, volume);
+  ƒS.Sound.setMasterVolume(volume);
 }
   }
   
   export function decrementSound(): void {
     if (volume > 0) {
     volume -= 0.1;
-    ƒS.Sound.setVolume(sound.air, volume);
+    ƒS.Sound.setMasterVolume(volume);
   }
 }
   
-
+  function changeform(): void {
+  dataForSave.Transformation.istransformed = true; 
+ }
+  function useDonut(): void {
+    dataForSave.usedDonut.used = true;
+ }
+  function useBread(): void {
+    dataForSave.usedBread.used = true;
+ }
+  function useChilli(): void {
+  dataForSave.usedChilli.used = true;
+ }
+  function useFlashlight(): void {
+    dataForSave.usedFlashlight.used = true;
+ }
 // Menu - create Menu with buttons
   let gameMenu: ƒS.Menu;
 
@@ -234,7 +373,7 @@ namespace Template {
     console.log(_option);
     if (_option == inGameMenu.save) {
       await ƒS.Progress.save();
-    }
+    } 
     else if (_option == inGameMenu.load ) {
       await ƒS.Progress.load();
     }
@@ -258,29 +397,29 @@ namespace Template {
     gameMenu = ƒS.Menu.create(inGameMenu, buttonFunctionalities, "gameMenu");
   //define the sequenceof scenes, each scene as an object with a reference
     let scenes: ƒS.Scenes = [
-  //{ scene: Animation, name: "Animation"},
-  { scene: Introduction, name: "Introduction"},
-  { scene: Start_Bedroom, name: "Start_Bedroom"},
-  { scene: Ending_World, name: "Ending_World"}
- // { scene: Decisions, name: "Decisions"},
- // { scene: Decisions1, name: "Decisions1", id: "De2"},
- // { scene: Decisions2, name: "Decisions2", id: "De3"},
- // { scene: Decisions3, name: "Decisions3", id: "De4"}
+      { scene: Debug, name: "Debug"},
+ // { scene: Introduction, name: "Introduction"},
+ // { scene: Start_Bedroom, name: "Start_Bedroom"},
+ // { scene: Meet_Satina, name: "Meet_Satina"},
+  { scene: Meet_Shubaru, name: "Meet_Shubaru", id: "Meet_Shubaru"},  
+  { scene: Meet_Scales, name: "Meet_Scales", id: "Meet_Scales"}
+ // { scene: Mensa, name: "Mensa"}    
+ // { scene: Ending_World, name: "Ending_World"}, 
+ // { scene: Park_Shubaru, name: "Park_Shubaru"},  
+ // { scene: Ending_Space, name: "Ending_Space"}   
+
   ];
 
   //Meter hier hin 
- //setData for saved objects, Alternative:
+ //setData for saved objects, Alternative: 
  //Nochmal nachschauen auf Github
     let uiElement: HTMLElement = document.querySelector("[type=interface]");
     dataForSave.state = ƒS.Progress.setData(dataForSave.state, uiElement);
     uiElement.setAttribute("value", "50");
-    console.log(uiElement);
-  //setData for saved objects:
-  //temp disabled
-//ƒS.Progress.setData(dataForSave);
+  //  console.log(uiElement);
   //start the sequence
     ƒS.Progress.go(scenes);
 }
-
+ 
 
 }

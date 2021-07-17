@@ -2,16 +2,22 @@
   "bundle": {
     "commonSourceDirectory": "..",
     "sourceFiles": [
-      "../Source/01_Text.ts",
-      "../Source/Animation.ts",
-      "../Source/Decisions.ts",
-      "../Source/Decisions1.ts",
-      "../Source/Decisions2.ts",
-      "../Source/Decisions3.ts",
+      "../Source/Best_Friend_Ending.ts",
+      "../Source/Debug.ts",
+      "../Source/Ending_Evil.ts",
+      "../Source/Ending_Space.ts",
       "../Source/Ending_World.ts",
       "../Source/Introduction.ts",
+      "../Source/Learning_with_Mothrin.ts",
       "../Source/Main.ts",
-      "../Source/Scene.ts",
+      "../Source/Meet_Satina.ts",
+      "../Source/Meet_Scales.ts",
+      "../Source/Meet_Shubaru.ts",
+      "../Source/Mensa.ts",
+      "../Source/Mothrin_Talk.ts",
+      "../Source/Park_Mothrin.ts",
+      "../Source/Park_Scales.ts",
+      "../Source/Park_Shubaru.ts",
       "../Source/Start_Bedroom.ts"
     ],
     "js": {
@@ -24,7 +30,7 @@
         },
         {
           "pos": 15,
-          "end": 50519,
+          "end": 94858,
           "kind": "text"
         }
       ],
@@ -52,7 +58,7 @@
       "sections": [
         {
           "pos": 0,
-          "end": 4313,
+          "end": 7408,
           "kind": "text"
         }
       ]

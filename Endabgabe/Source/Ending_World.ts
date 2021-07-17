@@ -51,13 +51,13 @@ namespace Template {
       //var list = document.getElementsByTagName("UL")[0];
       //var usedItem = list.getElementsByTagName("LI")[0].innerHTML;
       await ƒS.Location.show(locations.Black);
-      await ƒS.update(1); 
-      await ƒS.Speech.tell(characters.Narrator, "At the end of this VN you decided to go to the park with a girl named Satina.");
+     // await ƒS.update(1); 
+     // await ƒS.Speech.tell(characters.Narrator, "At the end of this VN you decided to go to the park with a girl named Satina.");
       await ƒS.update(1); 
       await ƒS.Location.show(locations.HFU_Park);
       await ƒS.update(1); 
       await ƒS.Character.show(characters.Satina, characters.Satina.pose.normal, ƒS.positionPercent(105, 130));
-      await ƒS.Character.show(characters.Protagonist, characters.Protagonist.pose.normal, ƒS.positionPercent(30, 140));
+      await ƒS.Character.show(characters.Protagonist, characters.Protagonist.pose.normal, ƒS.positionPercent(29, 150));
       //Hier falls Donut verwendet wurde
       await ƒS.update(1); 
       ƒS.Speech.clear();

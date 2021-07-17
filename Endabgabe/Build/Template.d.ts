@@ -1,20 +1,14 @@
 declare namespace Template {
-    function Text(): ƒS.SceneReturn;
+    function Best_Friend_Ending(): ƒS.SceneReturn;
 }
 declare namespace Template {
-    function Animation(): ƒS.SceneReturn;
+    function Debug(): ƒS.SceneReturn;
 }
 declare namespace Template {
-    function Decisions(): ƒS.SceneReturn;
+    function Ending_Evil(): ƒS.SceneReturn;
 }
 declare namespace Template {
-    function Decisions1(): ƒS.SceneReturn;
-}
-declare namespace Template {
-    function Decisions2(): ƒS.SceneReturn;
-}
-declare namespace Template {
-    function Decisions3(): ƒS.SceneReturn;
+    function Ending_Space(): ƒS.SceneReturn;
 }
 declare namespace Template {
     function Ending_World(): ƒS.SceneReturn;
@@ -23,22 +17,26 @@ declare namespace Template {
     function Introduction(): ƒS.SceneReturn;
 }
 declare namespace Template {
+    function Learning_with_Mothrin(): ƒS.SceneReturn;
+}
+declare namespace Template {
     export import ƒ = FudgeCore;
     export import ƒS = FudgeStory;
-    let transition: {
+    export let transition: {
         clock: {
             duration: number;
             alpha: string;
             edge: number;
         };
     };
-    let sound: {
+    export let sound: {
         air: string;
         dio: string;
+        space: string;
         filler: string;
         click: string;
     };
-    let locations: {
+    export let locations: {
         HFU: {
             name: string;
             background: string;
@@ -67,6 +65,14 @@ declare namespace Template {
             name: string;
             background: string;
         };
+        HFU_Bathroom: {
+            name: string;
+            background: string;
+        };
+        HFU_Outside_L: {
+            name: string;
+            background: string;
+        };
         Park: {
             name: string;
             background: string;
@@ -84,7 +90,7 @@ declare namespace Template {
             background: string;
         };
     };
-    let characters: {
+    export let characters: {
         Narrator: {
             name: string;
         };
@@ -96,12 +102,34 @@ declare namespace Template {
             origin: ƒ.ORIGIN2D;
             pose: {
                 normal: string;
-                smile: string;
-                sad: string;
                 angel: string;
+                happy: string;
+                sad: string;
+                angry: string;
             };
         };
         Prof: {
+            name: string;
+            origin: ƒ.ORIGIN2D;
+            pose: {
+                normal: string;
+            };
+        };
+        PlanetBig: {
+            name: string;
+            origin: ƒ.ORIGIN2D;
+            pose: {
+                normal: string;
+            };
+        };
+        PlanetSmall: {
+            name: string;
+            origin: ƒ.ORIGIN2D;
+            pose: {
+                normal: string;
+            };
+        };
+        BreadSun: {
             name: string;
             origin: ƒ.ORIGIN2D;
             pose: {
@@ -114,8 +142,9 @@ declare namespace Template {
             pose: {
                 normal: string;
                 shadow: string;
-                smile: string;
+                happy: string;
                 sad: string;
+                angry: string;
             };
         };
         Satina: {
@@ -123,8 +152,29 @@ declare namespace Template {
             origin: ƒ.ORIGIN2D;
             pose: {
                 normal: string;
-                smile: string;
+                happy: string;
                 sad: string;
+                angry: string;
+            };
+        };
+        Shubaru: {
+            name: string;
+            origin: ƒ.ORIGIN2D;
+            pose: {
+                normal: string;
+                happy: string;
+                sad: string;
+                angry: string;
+            };
+        };
+        Scales: {
+            name: string;
+            origin: ƒ.ORIGIN2D;
+            pose: {
+                normal: string;
+                happy: string;
+                sad: string;
+                angry: string;
             };
         };
         Mother: {
@@ -132,13 +182,10 @@ declare namespace Template {
             origin: ƒ.ORIGIN2D;
             pose: {
                 normal: string;
-                shadow: string;
-                smile: string;
-                sad: string;
             };
         };
     };
-    let dataForSave: {
+    export let dataForSave: {
         Protagonist: {
             name: string;
         };
@@ -148,35 +195,107 @@ declare namespace Template {
         Transformation: {
             istransformed: boolean;
         };
+        usedDonut: {
+            used: boolean;
+        };
+        usedBread: {
+            used: boolean;
+        };
+        usedChilli: {
+            used: boolean;
+        };
+        usedFlashlight: {
+            used: boolean;
+        };
         MothrinAffection: {
             score: number;
+        };
+        SatinaAffection: {
+            score: number;
+        };
+        ShubaruAffection: {
+            score: number;
+        };
+        ScalesAffection: {
+            score: number;
+        };
+        Interacted_with_Scales: {
+            boolean: boolean;
         };
         state: {
             a: number;
         };
     };
-    let items: {
-        Pokeball: {
-            name: string;
-            description: string;
-            image: string;
-        };
-        Pokeball2: {
-            name: string;
-            description: string;
-            image: string;
-        };
+    export let items: {
         Donut: {
             name: string;
             description: string;
             image: string;
+            handler: typeof changeform;
+        };
+        Mothdust: {
+            name: string;
+            description: string;
+            image: string;
+            static: boolean;
+        };
+        EvilDonut: {
+            name: string;
+            description: string;
+            image: string;
+            handler: typeof useDonut;
+        };
+        Bread: {
+            name: string;
+            description: string;
+            image: string;
+            handler: typeof useBread;
+        };
+        Chilli: {
+            name: string;
+            description: string;
+            image: string;
+            handler: typeof useChilli;
+        };
+        Flashlight: {
+            name: string;
+            description: string;
+            image: string;
+            handler: typeof useFlashlight;
         };
     };
-    function incrementSound(): void;
-    function decrementSound(): void;
+    export function incrementSound(): void;
+    export function decrementSound(): void;
+    function changeform(): void;
+    function useDonut(): void;
+    function useBread(): void;
+    function useChilli(): void;
+    function useFlashlight(): void;
+    export {};
 }
 declare namespace Template {
-    function Scene(): ƒS.SceneReturn;
+    function Meet_Satina(): ƒS.SceneReturn;
+}
+declare namespace Template {
+    function Meet_Scales(): ƒS.SceneReturn;
+}
+declare namespace Template {
+    function Meet_Shubaru(): ƒS.SceneReturn;
+}
+declare namespace Template {
+    function Mensa(): ƒS.SceneReturn;
+}
+declare namespace Template {
+    function Mothrin_Talk(): ƒS.SceneReturn;
+}
+declare namespace Template {
+    function Park_Mothrin(): ƒS.SceneReturn;
+}
+declare namespace Template {
+    function Park_Scales(): ƒS.SceneReturn;
+}
+declare namespace Template {
+    function Park_Shubaru(): ƒS.SceneReturn;
 }
 declare namespace Template {
     function Start_Bedroom(): ƒS.SceneReturn;

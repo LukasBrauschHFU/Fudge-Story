@@ -64,14 +64,14 @@ dialog[type="inventory"] > ul > li > description{
 }
 
 dialog[class="gameMenu"] {
-  position: relative;
+  position: fixed;
   width: auto;
   height: auto;
   padding: 5px;
   display: table;
   background-color: rgba(84, 84, 211, 0.335);
-  bottom: 175px;
-  left: 850px;
+  bottom: 10.5%;
+  left: 75%;
 }
 dialog[class="gameMenu"] > button {
   background-color: rgba(158, 158, 235, 0.801);
@@ -91,8 +91,20 @@ speech{
   border: 4px solid rgb(46, 43, 43);
 }
 
-speech.Ryu name {
-  color: rgb(54, 61, 87)
+speech.Mothrin name {
+  color: rgb(119, 113, 25)
+}
+
+speech.Satina name {
+  color: rgb(143, 31, 31)
+}
+
+speech.Shubaru name {
+  color: rgb(46, 184, 189)
+}
+
+speech.Scales name {
+  color: rgb(14, 66, 23)
 }
 
 speech.Protag name {
@@ -105,7 +117,7 @@ speech.Narrator name {
 
 speech > name {
   position: absolute;
-  bottom: 135px;
+  bottom: 105%;
   border: 4px solid rgb(46, 43, 43);
   background-color: rgba(255, 255, 255, 0.918);
 }
