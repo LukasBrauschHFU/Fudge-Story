@@ -1,6 +1,6 @@
 Lukas Brausch (me):
 - Serenade of Darkness (Dark Theme)
-- All sprites
+- All sprites (minus Fudge)
 - All backgrounds
 - Story
 
