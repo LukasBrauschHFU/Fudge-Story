@@ -18,6 +18,6 @@ Enden
 
 Von mir erstellte Inhalte:
 - Serenade of Darkness (Dark Theme)
-- All sprites
+- All sprites (minus Fudge)
 - All backgrounds
 - Story
