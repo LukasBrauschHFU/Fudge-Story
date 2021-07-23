@@ -1,5 +1,11 @@
 I just wanted to chill at home but now I am stuck working at a university with monster girls
 
+Steuerung:
+- M: Öffnet das Menü, falls es geschlossen wurde
+- I: Öffnet das Inventar
+- F4: Speichert das Spiel
+- F9: Läd den Speicherstand
+
 Enthaltene Kriterien:
 
 - Konzeption
