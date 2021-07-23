@@ -12,15 +12,15 @@ Enthaltene Kriterien:
 - Charakter-Konzept
 - Auswahlmöglichkeiten
 - Branching narratives
-- Novel-Pages
+- Novel-Pages (für Credits)
 - Audio
 - Gui
-- Input-Felder
+- Input-Felder (Namensinput des Spielers)
 - Punkteverteilungssystem (Affection-Score für jeden Character + Progress-Score für die Progress-Bar)
-- Inventory-und ItemSystem
+- Inventory-und Item-System
 - Animation
 - Styling
-- Enden
+- Enden (7)
 
 Von mir erstellte Inhalte:
 - Serenade of Darkness (Dark Theme)
