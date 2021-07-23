@@ -25,7 +25,7 @@ Von mir erstellte Inhalte:
 Quellen:
 - https://github.com/LukasBrauschHFU/Fudge-Story/blob/main/Endabgabe/Quellen.txt
 
-Konzept:
+Konzept(nach einem Download besser lesbar):
 - https://github.com/LukasBrauschHFU/Fudge-Story/blob/main/Endabgabe/Konzeption/Konzept.pdf
 
 Spielbare Anwendung:
