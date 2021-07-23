@@ -1,0 +1,69 @@
+{
+  "bundle": {
+    "commonSourceDirectory": "..",
+    "sourceFiles": [
+      "../Source/Debug.ts",
+      "../Source/Ending.ts",
+      "../Source/Ending_Best_Friends.ts",
+      "../Source/Ending_Evil.ts",
+      "../Source/Ending_Space.ts",
+      "../Source/Ending_World.ts",
+      "../Source/Introduction.ts",
+      "../Source/Learning_with_Mothrin.ts",
+      "../Source/Main.ts",
+      "../Source/Meet_Satina.ts",
+      "../Source/Meet_Scales.ts",
+      "../Source/Meet_Shubaru.ts",
+      "../Source/Mensa.ts",
+      "../Source/Mothrin_Talk.ts",
+      "../Source/Park_Mothrin.ts",
+      "../Source/Park_Scales.ts",
+      "../Source/Park_Shubaru.ts",
+      "../Source/Start_Bedroom.ts"
+    ],
+    "js": {
+      "sections": [
+        {
+          "pos": 0,
+          "end": 13,
+          "kind": "prologue",
+          "data": "use strict"
+        },
+        {
+          "pos": 15,
+          "end": 128773,
+          "kind": "text"
+        }
+      ],
+      "sources": {
+        "prologues": [
+          {
+            "file": 0,
+            "text": "",
+            "directives": [
+              {
+                "pos": -1,
+                "end": -1,
+                "expression": {
+                  "pos": -1,
+                  "end": -1,
+                  "text": "use strict"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "dts": {
+      "sections": [
+        {
+          "pos": 0,
+          "end": 7931,
+          "kind": "text"
+        }
+      ]
+    }
+  },
+  "version": "3.7.3"
+}
