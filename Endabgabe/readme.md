@@ -11,7 +11,7 @@ Steuerung:
 
 | Nr | Bezeichnung           | Inhalt                                                                                                                                                                                                                                                                         |
 |---:|-----------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|    | Titel                 | I just wanted to chill at home but now I am stuck working at a university with monster girls”
+|    | Titel                 | I just wanted to chill at home but now I am stuck working at a university with monster girls
 |    | Name                  | Lukas Brausch
 |    | Matrikelnummer        | 260418
 |  1 | Konzeption     | https://github.com/LukasBrauschHFU/Fudge-Story/blob/main/Endabgabe/Konzeption/Konzept.pdf                                                                                                                          |
