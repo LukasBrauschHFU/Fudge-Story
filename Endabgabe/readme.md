@@ -16,7 +16,7 @@ Enthaltene Kriterien:
 - Audio
 - Gui
 - Input-Felder
-- Punkteverteilungssystem
+- Punkteverteilungssystem (Affection-Score für jeden Character + Progress-Score für die Progress-Bar)
 - Inventory-und ItemSystem
 - Animation
 - Styling
