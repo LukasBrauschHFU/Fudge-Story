@@ -222,10 +222,8 @@ namespace Template {
     }
   };
 
-
-  //Add data to savedata (todo: replace protagonist from above(in anderen Dateien auch))
   export let dataForSave = {
-    Protagonist: {
+     Protagonist: {
       name: ""
     },
     Score: {
@@ -371,7 +369,7 @@ namespace Template {
     dataForSave.usedChilli.used = true;
   }
   function cantBeUsedNow(): void {
-    ƒS.Speech.tell(characters.Narrator, "This Item can´t be used right now");
+    console.log("This can´t be used right now");
   }
   function useFlashlight(): void {
     dataForSave.usedFlashlight.used = true;
@@ -476,8 +474,9 @@ namespace Template {
     ];
 
     let uiElement: HTMLElement = document.querySelector("[type=interface]");
+   // dataForSave = ƒS.Progress.setData(dataForSave, uiElement);
     dataForSave.state = ƒS.Progress.setData(dataForSave.state, uiElement);
-    uiElement.setAttribute("value", "50");
+    uiElement.setAttribute("value", "50"); 
 
     //start the sequence
     ƒS.Progress.go(scenes);

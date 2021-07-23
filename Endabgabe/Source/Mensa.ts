@@ -19,7 +19,7 @@ namespace Template {
       Shubaru: {
         T0000: "I forgot my food at home.",
         T0001: "For me ? Thank you very much.",
-        T0002: "So, my dude, I was wondering, would like to chill in the park with me later ?",
+        T0002: "So, my dude, I was wondering, would you like to chill in the park with me later ?",
         T0003: "Really? Great. I´ll pick you up once your shift is over."
       },
       Satina: {
@@ -90,7 +90,7 @@ namespace Template {
         await ƒS.Character.show(characters.Mothrin, characters.Mothrin.pose.normal, ƒS.positionPercent(105, 150));
         ƒS.Sound.fade(sound.mothrin, 0.2, 2, true);
         await ƒS.update(1);
-        await ƒS.Speech.tell(characters.Mothrin, "Good Afternoon, " + dataForSave.Protagonist.name);
+        await ƒS.Speech.tell(characters.Mothrin, "Good afternoon, " + dataForSave.Protagonist.name);
         await ƒS.Speech.tell(characters.Protagonist, text.Protagonist.T0000);
         await ƒS.Speech.tell(characters.Mothrin, text.Mothrin.T0000);
         await ƒS.Inventory.open();
@@ -155,7 +155,7 @@ namespace Template {
         await ƒS.Character.show(characters.Shubaru, characters.Shubaru.pose.normal, ƒS.positionPercent(115, 150));
         ƒS.Sound.fade(sound.shubaru, 0.2, 2, true);
         await ƒS.update(1);
-        await ƒS.Speech.tell(characters.Shubaru, "Good Afternoon, " + dataForSave.Protagonist.name);
+        await ƒS.Speech.tell(characters.Shubaru, "Good afternoon, " + dataForSave.Protagonist.name);
         await ƒS.Speech.tell(characters.Protagonist, text.Protagonist.T0000);
         await ƒS.Speech.tell(characters.Shubaru, text.Shubaru.T0000);
         await ƒS.Inventory.open();
@@ -217,7 +217,7 @@ namespace Template {
         await ƒS.Character.show(characters.Satina, characters.Satina.pose.normal, ƒS.positionPercent(108, 150));
         ƒS.Sound.fade(sound.satina, 0.2, 2, true);
         await ƒS.update(1);
-        await ƒS.Speech.tell(characters.Satina, "Good Afternoon, " + dataForSave.Protagonist.name);
+        await ƒS.Speech.tell(characters.Satina, "Good afternoon, " + dataForSave.Protagonist.name);
         await ƒS.Speech.tell(characters.Protagonist, text.Protagonist.T0000);
         await ƒS.Speech.tell(characters.Satina, text.Satina.T0000);
         await ƒS.Inventory.open();
@@ -279,7 +279,7 @@ namespace Template {
         await ƒS.Character.show(characters.Scales, characters.Scales.pose.normal, ƒS.positionPercent(102, 150));
         ƒS.Sound.fade(sound.scales, 0.2, 2, true);
         await ƒS.update(1);
-        await ƒS.Speech.tell(characters.Scales, "Good Afternoon, " + dataForSave.Protagonist.name);
+        await ƒS.Speech.tell(characters.Scales, "Good afternoon, " + dataForSave.Protagonist.name); 
         await ƒS.Speech.tell(characters.Protagonist, text.Protagonist.T0000);
         await ƒS.Speech.tell(characters.Scales, text.Scales.T0000);
         await ƒS.Inventory.open();

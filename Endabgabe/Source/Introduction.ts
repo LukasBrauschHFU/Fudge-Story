@@ -27,6 +27,6 @@ namespace Template {
     await ƒS.Character.hide(characters.Prof);
     ƒS.Sound.fade(sound.intro, 0, 1, true);
     dataForSave.state.a += 12;
-    await ƒS.update(2);
+    await ƒS.update(1); 
   }
 }

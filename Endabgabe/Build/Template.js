@@ -251,7 +251,7 @@ var Template;
         await Template.ƒS.Character.show(Template.characters.BreadSun, Template.characters.BreadSun.pose.normal, Template.ƒS.positionPercent(53, 45));
         Template.ƒS.Character.animate(Template.characters.PlanetBig, Template.characters.PlanetBig.pose.normal, animation);
         await Template.ƒS.Character.animate(Template.characters.BreadSun, Template.characters.BreadSun.pose.normal, animation2);
-        await Template.ƒS.Speech.tell(Template.characters.Shubaru, "Thanks for sharing this moment with me" + Template.dataForSave.Protagonist.name);
+        await Template.ƒS.Speech.tell(Template.characters.Shubaru, "Thanks for sharing this moment with me " + Template.dataForSave.Protagonist.name);
         Template.ƒS.Sound.fade(Template.sound.space, 0, 1, false);
         Template.dataForSave.state.a = 100;
         await Template.ƒS.Character.hideAll();
@@ -514,7 +514,7 @@ var Template;
         await Template.ƒS.Character.hide(Template.characters.Prof);
         Template.ƒS.Sound.fade(Template.sound.intro, 0, 1, true);
         Template.dataForSave.state.a += 12;
-        await Template.ƒS.update(2);
+        await Template.ƒS.update(1);
     }
     Template.Introduction = Introduction;
 })(Template || (Template = {}));
@@ -760,7 +760,6 @@ var Template;
             }
         }
     };
-    //Add data to savedata (todo: replace protagonist from above(in anderen Dateien auch))
     Template.dataForSave = {
         Protagonist: {
             name: ""
@@ -902,7 +901,7 @@ var Template;
         Template.dataForSave.usedChilli.used = true;
     }
     function cantBeUsedNow() {
-        Template.ƒS.Speech.tell(Template.characters.Narrator, "This Item can´t be used right now");
+        console.log("This can´t be used right now");
     }
     function useFlashlight() {
         Template.dataForSave.usedFlashlight.used = true;
@@ -1002,6 +1001,7 @@ var Template;
             { scene: Template.Ending, name: "Ending", id: "Ending" }
         ];
         let uiElement = document.querySelector("[type=interface]");
+        // dataForSave = ƒS.Progress.setData(dataForSave, uiElement);
         Template.dataForSave.state = Template.ƒS.Progress.setData(Template.dataForSave.state, uiElement);
         uiElement.setAttribute("value", "50");
         //start the sequence
@@ -1391,7 +1391,7 @@ var Template;
             Shubaru: {
                 T0000: "I forgot my food at home.",
                 T0001: "For me ? Thank you very much.",
-                T0002: "So, my dude, I was wondering, would like to chill in the park with me later ?",
+                T0002: "So, my dude, I was wondering, would you like to chill in the park with me later ?",
                 T0003: "Really? Great. I´ll pick you up once your shift is over."
             },
             Satina: {
@@ -1458,7 +1458,7 @@ var Template;
                 await Template.ƒS.Character.show(Template.characters.Mothrin, Template.characters.Mothrin.pose.normal, Template.ƒS.positionPercent(105, 150));
                 Template.ƒS.Sound.fade(Template.sound.mothrin, 0.2, 2, true);
                 await Template.ƒS.update(1);
-                await Template.ƒS.Speech.tell(Template.characters.Mothrin, "Good Afternoon, " + Template.dataForSave.Protagonist.name);
+                await Template.ƒS.Speech.tell(Template.characters.Mothrin, "Good afternoon, " + Template.dataForSave.Protagonist.name);
                 await Template.ƒS.Speech.tell(Template.characters.Protagonist, text.Protagonist.T0000);
                 await Template.ƒS.Speech.tell(Template.characters.Mothrin, text.Mothrin.T0000);
                 await Template.ƒS.Inventory.open();
@@ -1523,7 +1523,7 @@ var Template;
                 await Template.ƒS.Character.show(Template.characters.Shubaru, Template.characters.Shubaru.pose.normal, Template.ƒS.positionPercent(115, 150));
                 Template.ƒS.Sound.fade(Template.sound.shubaru, 0.2, 2, true);
                 await Template.ƒS.update(1);
-                await Template.ƒS.Speech.tell(Template.characters.Shubaru, "Good Afternoon, " + Template.dataForSave.Protagonist.name);
+                await Template.ƒS.Speech.tell(Template.characters.Shubaru, "Good afternoon, " + Template.dataForSave.Protagonist.name);
                 await Template.ƒS.Speech.tell(Template.characters.Protagonist, text.Protagonist.T0000);
                 await Template.ƒS.Speech.tell(Template.characters.Shubaru, text.Shubaru.T0000);
                 await Template.ƒS.Inventory.open();
@@ -1585,7 +1585,7 @@ var Template;
                 await Template.ƒS.Character.show(Template.characters.Satina, Template.characters.Satina.pose.normal, Template.ƒS.positionPercent(108, 150));
                 Template.ƒS.Sound.fade(Template.sound.satina, 0.2, 2, true);
                 await Template.ƒS.update(1);
-                await Template.ƒS.Speech.tell(Template.characters.Satina, "Good Afternoon, " + Template.dataForSave.Protagonist.name);
+                await Template.ƒS.Speech.tell(Template.characters.Satina, "Good afternoon, " + Template.dataForSave.Protagonist.name);
                 await Template.ƒS.Speech.tell(Template.characters.Protagonist, text.Protagonist.T0000);
                 await Template.ƒS.Speech.tell(Template.characters.Satina, text.Satina.T0000);
                 await Template.ƒS.Inventory.open();
@@ -1647,7 +1647,7 @@ var Template;
                 await Template.ƒS.Character.show(Template.characters.Scales, Template.characters.Scales.pose.normal, Template.ƒS.positionPercent(102, 150));
                 Template.ƒS.Sound.fade(Template.sound.scales, 0.2, 2, true);
                 await Template.ƒS.update(1);
-                await Template.ƒS.Speech.tell(Template.characters.Scales, "Good Afternoon, " + Template.dataForSave.Protagonist.name);
+                await Template.ƒS.Speech.tell(Template.characters.Scales, "Good afternoon, " + Template.dataForSave.Protagonist.name);
                 await Template.ƒS.Speech.tell(Template.characters.Protagonist, text.Protagonist.T0000);
                 await Template.ƒS.Speech.tell(Template.characters.Scales, text.Scales.T0000);
                 await Template.ƒS.Inventory.open();

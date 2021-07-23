@@ -43,7 +43,7 @@ namespace Template {
     await ƒS.Character.show(characters.BreadSun, characters.BreadSun.pose.normal, ƒS.positionPercent(53, 45));
     ƒS.Character.animate(characters.PlanetBig, characters.PlanetBig.pose.normal, animation);
     await ƒS.Character.animate(characters.BreadSun, characters.BreadSun.pose.normal, animation2);
-    await ƒS.Speech.tell(characters.Shubaru, "Thanks for sharing this moment with me" + dataForSave.Protagonist.name);
+    await ƒS.Speech.tell(characters.Shubaru, "Thanks for sharing this moment with me " + dataForSave.Protagonist.name);
     ƒS.Sound.fade(sound.space, 0, 1, false);
     dataForSave.state.a = 100;
     await ƒS.Character.hideAll();
