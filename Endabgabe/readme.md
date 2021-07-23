@@ -34,5 +34,5 @@ Spielbare Anwendung:
 Code:
 - https://github.com/LukasBrauschHFU/Fudge-Story/tree/main/Endabgabe/Source
 
-Gepaktes Archiv:
-- 
+Gepacktes Archiv (wegen seiner Größe auf GDrive):
+- https://drive.google.com/file/d/1rAaky5yMnqEKuBCGQqgp5UDMv2yEtBxZ/view?usp=sharing
